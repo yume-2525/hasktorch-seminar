@@ -1,0 +1,9 @@
+services:
+  hasktorch:
+    platform: linux/amd64
+    build: .
+    volumes:
+      - .:/home/ubuntu/my-hasktorch-task
+    ports:
+      - "8888:8888"
+    command: jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
