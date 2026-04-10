@@ -1,2 +1,14 @@
+# Haskell/Stackの一時ファイル
 .stack-work/
-*~
+dist-newstyle/
+
+# Dockerの一時ファイル
+.docker-compose/
+
+# Mac特有のゴミファイル
+.DS_Store
+
+# その他、バイナリやログ
+*.log
+*.o
+*.hi
