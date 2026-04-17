@@ -1,4 +1,4 @@
-module Main (main) where
+module Example (main) where
 
 --hasktorch
 import Torch.TensorFactories (zeros')
