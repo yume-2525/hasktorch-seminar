@@ -1,6 +1,7 @@
 # Haskell/Stackの一時ファイル
 .stack-work/
 dist-newstyle/
+Session3/data/
 
 # Dockerの一時ファイル
 .docker-compose/

@@ -55,6 +55,45 @@ executable my-hasktorch-task-exe
     , my-hasktorch-task
   default-language: Haskell2010
 
+executable session-3-graduate-admission-linear
+  main-is: GraduateAdmissionLinear.hs
+  other-modules:
+      LinearRegression
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session3
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+    , vector
+  default-language: Haskell2010
+
+executable session3-linear-regression
+  main-is: LinearRegression.hs
+  other-modules:
+      GraduateAdmissionLinear
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session3
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+  default-language: Haskell2010
+
 test-suite my-hasktorch-task-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
