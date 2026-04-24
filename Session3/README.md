@@ -200,7 +200,7 @@
 --**コード変更**--
     drawLearningCurve がとる引数に、訓練の過程のリストが必要だったので、trainを一部変更し、リストも返すようにした。
 --**実行結果**--
-    ![learning curve](../train_result2.png)
+    ![learning curve](/train_result2.png)
 
 ## 5
 --**train**--
