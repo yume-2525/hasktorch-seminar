@@ -19,7 +19,7 @@ h = asTensor (0.0001 :: Float)
 rate :: Tensor
 rate = asTensor (0.0000002 :: Float)
 
-linear :: 
+linear :: -- yの予測値がもとまる
     (Tensor, Tensor) -> -- ^ parameters ([a, b]: 1 × 2, c: scalar)
     Tensor ->           -- ^ data x: 1 × 10
     Tensor              -- ^ z: 1 × 10
