@@ -23,10 +23,11 @@ caluclateError
 
 また、[Note](https://medium.com/analytics-vidhya/implementing-perceptron-learning-algorithm-to-solve-and-in-python-903516300b2f)を読んで以下のような流れであることを理解しました。
 
-1. ランダムな重みとバイアス、それから訓練セットを設定する。
-2. step関数を定義し、１の重みとバイアスで計算する。
-3. calculateError関数で、誤差の合計を計算する。
-4. 繰り返しの上限回数と学習率を設定。誤差の合計が０になるか、繰り返し回数が上限に達するまで重みとバイアスの更新を繰り返す。重みの更新は（新しい値）＝（古い値）＋（学習率）*（誤差）＊（関係する入力値）、バイアスの更新は、（新しい値）＝（古い値）+（学習率）＊（誤差）で計算する。
+1. ランダムな重みとバイアス、それから訓練セットを設定する。（Σ（入力値）＊（重み））＋（バイアス）を計算する。
+2. step関数にかける。
+3. percepron関数で上記を行い、予測値を出す。
+4. calculateError関数で、誤差を計算する。
+5. 繰り返しの上限回数と学習率を設定。誤差の合計が０になるか、繰り返し回数が上限に達するまで重みとバイアスの更新を繰り返す。重みの更新は（新しい値）＝（古い値）＋（学習率）*（誤差）＊（関係する入力値）、バイアスの更新は、（新しい値）＝（古い値）+（学習率）＊（誤差）で計算する。
 ![](./memo_02.png)
 
 結果は以下のように予測できる。
@@ -36,10 +37,11 @@ caluclateError
 
 #### 実行結果
 ```
-weight : [0.1321814,2.9640222], bias : -3.095568
-Input: [1,1] | Predict: 1.0 | Target: 1 | Score: OK (Before step: 6.3562393e-4)
-Input: [1,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -2.9633865)
-Input: [0,1] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -0.13154578)
-Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -3.095568)
+weight : [4.42507,4.7318616], bias : -4.811824
+Input: [1,1] | Predict: 1.0 | Target: 1 | Score: OK (Before step: 4.345107)
+Input: [1,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -0.38675404)
+Input: [0,1] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -7.996225e-2)
+Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 ```
+
 
