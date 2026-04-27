@@ -125,7 +125,7 @@ mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map line
 ```
 batchSize = 2
 ```
-
+一回のループで使うデータ数
 ```
 numIters = 2000
 ```
@@ -156,8 +156,9 @@ initに、入力値：２ノード数、中間層：２ノード数、出力値�
   trained <- foldLoop init numIters $ \state i -> do
     input <- randIO' [batchSize, 2] >>= return . (toDType Float) . (gt 0.5)
 ```
-> >>=：Sequentially compose two actions, passing any value produced by the first as an argument to the second. 'as >>= bs' can be understood as the do expression  
+> ">>="：Sequentially compose two actions, passing any value produced by the first as an argument to the second. 'as >>= bs' can be understood as the do expression  
 > return . (toDType Float) . (gt 0.5)：.は関数合成演算子。右から順に処理される。よって、ここではまず0.5より大きいかを判定し、その結果をFloatに変換し、最後にreturnする。  
+
 traindに繰り返し訓練された重み等(state)が代入される。  
 inputはランダムな訓練データ。
 ```
@@ -166,6 +167,7 @@ inputはランダムな訓練データ。
 ```
 > squeezeAll :: Tensor -> Tensor  
 > サイズが１しかない不要な次元をすべて削ぎ落とす。今回は出力が１なので、Tenosrの一次元ベクトルに圧縮される。  
+
 誤差を計算。
 ```
     when (i `mod` 100 == 0) $ do
@@ -180,6 +182,7 @@ inputはランダムな訓練データ。
 > 引数３：Tensor(スカラー)、誤差  
 > 引数４：LearningRate 、学習率  
 > 返り値：（更新後のデータ、更新の記録）  
+
 stateを、学習率1e-1の勾配降下法で更新する。
 ```
   putStrLn "Final Model:"
