@@ -45,3 +45,111 @@ Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 ```
 
 
+## 2. Build a XOR gate using a multi-layer perceptron and train it employing the backpropagation mechanism available in the hasktorch library.
+
+### b. 
+```
+data MLPSpec = MLPSpec
+  { feature_counts :: [Int],
+    nonlinearitySpec :: Tensor -> Tensor
+  }
+  ```
+  多層パーセプトロンの構造  
+  feature_counts：それぞれの層に幾つのパラメータを持つか　nonlinearitySpec：活性化関数
+
+  ```
+  data MLP = MLP
+  { layers :: [Linear],
+    nonlinearity :: Tensor -> Tensor
+  }
+  deriving (Generic, Parameterized)
+  ```
+> data Linear
+> weight :: Parameter	 
+> bias :: Parameter
+  多層パーセプトロンの中身  
+  layers：それぞれの層での重みとバイアス　nonlinearity：活性化関数
+
+```
+instance Randomizable MLPSpec MLP where
+  sample MLPSpec {..} = do
+    let layer_sizes = mkLayerSizes feature_counts
+    linears <- mapM sample $ map (uncurry LinearSpec) layer_sizes
+    return $ MLP {layers = linears, nonlinearity = nonlinearitySpec}
+    where
+      mkLayerSizes (a : (b : t)) =
+        scanl shift (a, b) t
+        where
+          shift (a, b) c = (b, c)
+```
+> class Randomizable spec f | spec -> f where
+> sample :: spec -> IO f
+> sample：関数　spec：構造　f：実体　（乱数入りの実体を作る）
+
+>scanl :: (b -> a -> b) -> b -> [a] -> [b] 
+>scanl is similar to foldl, but returns a list of successive reduced values from the left:
+>scanl f z [x1, x2, ...] == [z, z `f` x1, (z `f` x1) `f` x2, ...]
+
+>uncurry :: (a -> b -> c) -> (a, b) -> c
+>uncurry converts a curried function to a function on pairs.
+>e.g.  uncurry (+) (1,2) >> 3, map (uncurry max) [(1,2), (3,4), (6,8)] >> [2,4,8]
+
+> data LinearSpec 
+> in_features :: Int	 
+> out_features :: Int	
+> in_features：入力数　out_features：出力数
+
+ここで行なっていること：MLPSpecを受け取って、その形の乱数を詰め込んだMLPを返している
+mkLayerSizes：リストを受け取って、隣り合った二個ずつのペアのリストを返す関数 e.g. [1,2,3]->[(1,2),(2,3)]  
+layer_sizes：（入力数、出力数）のリスト e.g. [（１層目のパラメータ数、２層目のパラメータ数）,（2層目のパラメータ数、3層目のパラメータ数）..]  
+linears：layer_sizesをLinearSpec型に変換したもの  
+sample：MLPSpecの構造をしたレコードをうけとってMLPを返す関数
+
+
+
+
+mlp :: MLP -> Tensor -> Tensor
+mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map linear layers
+  where
+    revApply x f = f x
+
+--------------------------------------------------------------------------------
+-- Training code
+--------------------------------------------------------------------------------
+
+batchSize = 2
+
+numIters = 2000
+
+model :: MLP -> Tensor -> Tensor
+model params t = mlp params t
+
+main :: IO ()
+main = do
+  init <-
+    sample $
+      MLPSpec
+        { feature_counts = [2, 2, 1],
+          nonlinearitySpec = Torch.tanh
+        }
+  trained <- foldLoop init numIters $ \state i -> do
+    input <- randIO' [batchSize, 2] >>= return . (toDType Float) . (gt 0.5)
+    let (y, y') = (tensorXOR input, squeezeAll $ model state input)
+        loss = mseLoss y y'
+    when (i `mod` 100 == 0) $ do
+      putStrLn $ "Iteration: " ++ show i ++ " | Loss: " ++ show loss
+    (newState, _) <- runStep state optimizer loss 1e-1
+    return newState
+  putStrLn "Final Model:"
+  putStrLn $ "0, 0 => " ++ (show $ squeezeAll $ model trained (asTensor [0, 0 :: Float]))
+  putStrLn $ "0, 1 => " ++ (show $ squeezeAll $ model trained (asTensor [0, 1 :: Float]))
+  putStrLn $ "1, 0 => " ++ (show $ squeezeAll $ model trained (asTensor [1, 0 :: Float]))
+  putStrLn $ "1, 1 => " ++ (show $ squeezeAll $ model trained (asTensor [1, 1 :: Float]))
+  return ()
+  where
+    optimizer = GD
+    tensorXOR :: Tensor -> Tensor
+    tensorXOR t = (1 - (1 - a) * (1 - b)) * (1 - (a * b))
+      where
+        a = select 1 0 t
+        b = select 1 1 t
