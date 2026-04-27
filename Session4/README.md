@@ -47,7 +47,7 @@ Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 
 ## 2. Build a XOR gate using a multi-layer perceptron and train it employing the backpropagation mechanism available in the hasktorch library.
 
-### b. 
+### b. Familiarize yourself with the hasktorch implementation, ensuring its alignment with the video's explanation. 
 ```
 data MLPSpec = MLPSpec
   { feature_counts :: [Int],
@@ -64,9 +64,9 @@ data MLPSpec = MLPSpec
   }
   deriving (Generic, Parameterized)
   ```
-> data Linear
-> weight :: Parameter	 
-> bias :: Parameter
+> data Linear  
+> weight :: Parameter	   
+> bias :: Parameter  
   多層パーセプトロンの中身  
   layers：それぞれの層での重みとバイアス　nonlinearity：活性化関数
 
@@ -82,21 +82,21 @@ instance Randomizable MLPSpec MLP where
         where
           shift (a, b) c = (b, c)
 ```
-> class Randomizable spec f | spec -> f where
-> sample :: spec -> IO f
+> class Randomizable spec f | spec -> f where  
+> sample :: spec -> IO f  
 > sample：関数　spec：構造　f：実体　（乱数入りの実体を作る）
 
->scanl :: (b -> a -> b) -> b -> [a] -> [b] 
->scanl is similar to foldl, but returns a list of successive reduced values from the left:
+>scanl :: (b -> a -> b) -> b -> [a] -> [b]   
+>scanl is similar to foldl, but returns a list of successive reduced values from the left:  
 >scanl f z [x1, x2, ...] == [z, z `f` x1, (z `f` x1) `f` x2, ...]
 
->uncurry :: (a -> b -> c) -> (a, b) -> c
->uncurry converts a curried function to a function on pairs.
+>uncurry :: (a -> b -> c) -> (a, b) -> c  
+>uncurry converts a curried function to a function on pairs.  
 >e.g.  uncurry (+) (1,2) >> 3, map (uncurry max) [(1,2), (3,4), (6,8)] >> [2,4,8]
 
-> data LinearSpec 
-> in_features :: Int	 
-> out_features :: Int	
+> data LinearSpec   
+> in_features :: Int     
+> out_features :: Int  
 > in_features：入力数　out_features：出力数
 
 ここで行なっていること：MLPSpecを受け取って、その形の乱数を詰め込んだMLPを返している
@@ -105,25 +105,42 @@ layer_sizes：（入力数、出力数）のリスト e.g. [（１層目のパ�
 linears：layer_sizesをLinearSpec型に変換したもの  
 sample：MLPSpecの構造をしたレコードをうけとってMLPを返す関数
 
-
-
-
+```
 mlp :: MLP -> Tensor -> Tensor
 mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map linear layers
   where
     revApply x f = f x
+```
+> intersperse :: a -> [a] -> [a]  
+> The intersperse function takes an element and a list and `intersperses' that element between the elements of the list.  
+> e.g. intersperse ',' "abcde" >> "a,b,c,d,e"、intersperse 1 [3, 4, 5] >> [3,1,4,1,5]  
 
---------------------------------------------------------------------------------
--- Training code
---------------------------------------------------------------------------------
+> linear :: Linear -> Tensor -> Tensor（一層分の（入力値）＊（重み）＋（バイアス）を計算する関数）
 
+引数１：MLP、多層パーセプトロンの中身  
+引数２：Tensor（ベクトル）、入力値
+返り値：Tensor（ベクトル）、結果
+機能：入力値に対して各層の重みとベクトル、活性化関数を使って計算し結果を返す。
+
+```
 batchSize = 2
+```
 
+```
 numIters = 2000
+```
+繰り返しの上限回数
 
+```
 model :: MLP -> Tensor -> Tensor
 model params t = mlp params t
+```
+引数１：MLP、多層パーセプトロンの中身
+引数２：Tensor（ベクトル）、入力値
+返り値：Tensor（ベクトル）、結果
+機能：入力値に対して各層の重みとベクトル、活性化関数を使って計算し結果を返す。（mlpを使う関数）
 
+```
 main :: IO ()
 main = do
   init <-
@@ -132,14 +149,39 @@ main = do
         { feature_counts = [2, 2, 1],
           nonlinearitySpec = Torch.tanh
         }
+```
+initに、入力値：２ノード数、中間層：２ノード数、出力値：１ノード数、活性化関数：tanh、それぞれの重みは乱数の多層パーセプトロンを設定する。
+
+```
   trained <- foldLoop init numIters $ \state i -> do
     input <- randIO' [batchSize, 2] >>= return . (toDType Float) . (gt 0.5)
+```
+> >>=：Sequentially compose two actions, passing any value produced by the first as an argument to the second. 'as >>= bs' can be understood as the do expression  
+> return . (toDType Float) . (gt 0.5)：.は関数合成演算子。右から順に処理される。よって、ここではまず0.5より大きいかを判定し、その結果をFloatに変換し、最後にreturnする。  
+traindに繰り返し訓練された重み等(state)が代入される。  
+inputはランダムな訓練データ。
+```
     let (y, y') = (tensorXOR input, squeezeAll $ model state input)
         loss = mseLoss y y'
+```
+> squeezeAll :: Tensor -> Tensor  
+> サイズが１しかない不要な次元をすべて削ぎ落とす。今回は出力が１なので、Tenosrの一次元ベクトルに圧縮される。  
+誤差を計算。
+```
     when (i `mod` 100 == 0) $ do
       putStrLn $ "Iteration: " ++ show i ++ " | Loss: " ++ show loss
     (newState, _) <- runStep state optimizer loss 1e-1
     return newState
+```
+> runStep :: (Parameterized model, Optimizer optimizer) => 
+> model -> optimizer -> Tensor -> LearningRate -> IO (model, optimizer)
+> 引数１：model、訓練中のデータ  
+> 引数２：optimizer、更新する方法  
+> 引数３：Tensor(スカラー)、誤差  
+> 引数４：LearningRate 、学習率  
+> 返り値：（更新後のデータ、更新の記録）  
+stateを、学習率1e-1の勾配降下法で更新する。
+```
   putStrLn "Final Model:"
   putStrLn $ "0, 0 => " ++ (show $ squeezeAll $ model trained (asTensor [0, 0 :: Float]))
   putStrLn $ "0, 1 => " ++ (show $ squeezeAll $ model trained (asTensor [0, 1 :: Float]))
@@ -153,3 +195,7 @@ main = do
       where
         a = select 1 0 t
         b = select 1 1 t
+```
+最終的な値でテストする。
+
+
