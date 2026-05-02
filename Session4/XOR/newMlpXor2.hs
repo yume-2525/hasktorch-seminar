@@ -2,7 +2,7 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Main where
+module newMlpXor2 where
 
 import Prelude hiding (tanh) 
 import Control.Monad (forM_)        --base

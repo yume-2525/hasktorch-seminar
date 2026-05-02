@@ -43,7 +43,9 @@ Input: [1,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -0.38675404)
 Input: [0,1] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -7.996225e-2)
 Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 ```
-==================
+
+------------
+
 
 ## 2. Build a XOR gate using a multi-layer perceptron and train it employing the backpropagation mechanism available in the hasktorch library.
 
@@ -334,3 +336,9 @@ trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 
 ------------------
 
+### b. Experiment with XOR using a step function.
+[](./XOR/MlpXor.hs)を参考にし、活性化関数をステップ関数にして実行した。  
+→エラーが起きて結果が出ない。  
+
+**考察**  
+ステップ関数は微分できないかつ、傾きが０または急激になるため適切な勾配が出せず、モデルの更新ができない。
