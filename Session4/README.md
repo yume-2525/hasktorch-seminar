@@ -43,9 +43,7 @@ Input: [1,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -0.38675404)
 Input: [0,1] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -7.996225e-2)
 Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 ```
-
-
-
+==================
 
 ## 2. Build a XOR gate using a multi-layer perceptron and train it employing the backpropagation mechanism available in the hasktorch library.
 
@@ -207,9 +205,11 @@ stateを、学習率1e-1の勾配降下法で更新する。
 ```
 最終的な値でテストする。
 
+------------------
+
 ### c. Analyze the differences between this implementation and the hasktorch version. Modify your code for enhanced readability.
 
---**コードの解析**--
+####コードの解析
 
 ```
 trainingData :: [([Float],Float)]
@@ -301,13 +301,13 @@ initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを�
 [0.0,0.0]: Tensor Float []  7.2013e-2
 ```
 
---**二つのコードの違い**--
+####二つのコードの違い
 + hasktorch-toolsのセット（MLPHypParams, mlpLayer, updateなど）を使って簡潔に書いている
 + データを記録するデバイスを定義している
 + 更新の過程を記録している
 + 訓練データ以外の数値をmain関数の中で定義している
 
---**可読性を高める修正**--
+####可読性を高める修正
 以下のように、mainの外で変数を定義してmainを簡素にした。  
 ```
 device :: Device
@@ -331,3 +331,6 @@ batchSize = 10
 trainingData :: [([Float],Float)]
 trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 ```
+
+------------------
+
