@@ -337,7 +337,7 @@ trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 ------------------
 
 ### b. Experiment with XOR using a step function.
-[](./XOR/MlpXor.hs)を参考にし、活性化関数をステップ関数にして実行した。  
+MlpXor.hsを参考にし、活性化関数をステップ関数にして実行した。  
 →エラーが起きて結果が出ない。  
 
 **考察**  
