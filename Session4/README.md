@@ -45,6 +45,8 @@ Input: [0,0] | Predict: 0.0 | Target: 0 | Score: OK (Before step: -4.811824)
 ```
 
 
+
+
 ## 2. Build a XOR gate using a multi-layer perceptron and train it employing the backpropagation mechanism available in the hasktorch library.
 
 ### b. Familiarize yourself with the hasktorch implementation, ensuring its alignment with the video's explanation. 
@@ -105,6 +107,7 @@ layer_sizes：（入力数、出力数）のリスト e.g. [（１層目のパ�
 linears：layer_sizesをLinearSpec型に変換したもの  
 sample：MLPSpecの構造をしたレコードをうけとってMLPを返す関数
 
+
 ```
 mlp :: MLP -> Tensor -> Tensor
 mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map linear layers
@@ -115,17 +118,20 @@ mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map line
 > The intersperse function takes an element and a list and `intersperses' that element between the elements of the list.  
 > e.g. intersperse ',' "abcde" >> "a,b,c,d,e"、intersperse 1 [3, 4, 5] >> [3,1,4,1,5]  
 
-> linear :: Linear -> Tensor -> Tensor（一層分の（入力値）＊（重み）＋（バイアス）を計算する関数）
+> linear :: Linear -> Tensor -> Tensor  
+（一層分の（入力値）＊（重み）＋（バイアス）を計算する関数）
 
 引数１：MLP、多層パーセプトロンの中身  
-引数２：Tensor（ベクトル）、入力値
+引数２：Tensor（ベクトル）、入力値  
 返り値：Tensor（ベクトル）、結果
 機能：入力値に対して各層の重みとベクトル、活性化関数を使って計算し結果を返す。
+
 
 ```
 batchSize = 2
 ```
 一回のループで使うデータ数
+
 ```
 numIters = 2000
 ```
@@ -176,7 +182,7 @@ inputはランダムな訓練データ。
     return newState
 ```
 > runStep :: (Parameterized model, Optimizer optimizer) => 
-> model -> optimizer -> Tensor -> LearningRate -> IO (model, optimizer)
+> model -> optimizer -> Tensor -> LearningRate -> IO (model, optimizer)  
 > 引数１：model、訓練中のデータ  
 > 引数２：optimizer、更新する方法  
 > 引数３：Tensor(スカラー)、誤差  
@@ -201,4 +207,94 @@ stateを、学習率1e-1の勾配降下法で更新する。
 ```
 最終的な値でテストする。
 
+### c. Analyze the differences between this implementation and the hasktorch version. Modify your code for enhanced readability.
 
+```
+trainingData :: [([Float],Float)]
+trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
+```
+10個の訓練データを作る。  
+
+```
+main :: IO()
+main = do
+  let iter = 1500::Int
+      device = Device CUDA 0
+      hypParams = MLPHypParams device 2 [(3,Sigmoid),(1,Sigmoid)]
+```
+> data MLPHypParams = MLPHypParams {  
+> dev :: Device,  
+> inputDim :: Int,  
+> layerSpecs :: [(Int,ActName)]  
+> } deriving (Eq, Show)  
+パーセプトロンの構成を形成する。今回は、使用するデバイスはDevice CUDA 0、入力層はノード数２、中間層のノード数３、入力層と中間層の間の活性化関数はシグモイド関数、出力層のノード数は１、中間層と出力層の活性化関数はシグモイド関数のパーセプトロンを構成している。  
+
+```
+  initModel <- sample hypParams
+```
+initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを代入している。  
+
+```
+  ((trainedModel,_),losses) <- mapAccumM [1..iter] (initModel,GD) $ \epoc (model,opt) -> do
+    let loss = sumTensors $ for trainingData $ \(input,output) ->
+                  let y = asTensor'' device output
+                      y' = mlpLayer model $ asTensor'' device input
+                  in mseLoss y y'
+        lossValue = (asValue loss)::Float 
+    showLoss 10 epoc lossValue 
+    u <- update model opt loss 1e-1
+    return (u, lossValue)
+```
+> mapAccumM :: (Monad m, Foldable t) => t a -> b -> (a -> b -> m (b,c)) -> m (b, [c])  
+> mapAccumM xs zero f = do  
+>  foldM (\(prev,lst) x -> do  
+>                           bc <- f x prev  
+>                           return (fst bc, (snd bc):lst)  
+>                           ) (zero,[]) xs  
+> 機能：状態を更新しながら、毎回の記録も取っておく関数  
+> 引数１：畳み込み可能なa、繰り返し回数のリスト  
+> 引数２：b、初期値  
+> 引数３：(a->b->m (b,c))、関数  
+
+> for：mapの引数をひっくり返した関数  
+
+> asTensor''：Tensor型のデータと、それを格納するデバイスを指定できる関数  
+
+> mlpLayer：パーセプトロンのモデルと入力値を与えて出力値を計算する関数  
+
+> mseLoss：二乗平均誤差を計算する関数  
+
+> sumTensors：１０個の訓練データの二乗平均誤差を合計している  
+
+> showLess：１０回に一回誤差を表示する。  
+
+> update：現在のモデル、更新方法、誤差、学習率を渡して改善したモデルを返す関数  
+
+役割：初期値がinitModel、GD(勾配降下法)でiter回数だけ更新したパーセプトロンのモデルとその時の誤差をtrainModelとlossesに代入している。
+
+
+```
+  drawLearningCurve "graph-xor.png" "Learning Curve" [("",reverse losses)]
+```
+> drawLearningCurve  
+> 引数１：ファイル名
+> 引数２：グラフのタイトル
+> 引数３：[（名前、データのリスト）]
+学習曲線を描画  
+![](./graph-xor.png)
+
+```
+  forM_ ([[1,1],[1,0],[0,1],[0,0]::[Float]]) $ \input -> do
+    putStr $ show $ input
+    putStr ": "
+    putStrLn $ show ((mlpLayer trainedModel $ asTensor'' device input))
+  -- print trainedModel
+  where for = flip map
+  ```
+最終的な学習結果を表示  
+```
+[1.0,1.0]: Tensor Float []  5.4089e-2
+[1.0,0.0]: Tensor Float []  0.9395   
+[0.0,1.0]: Tensor Float []  0.9266   
+[0.0,0.0]: Tensor Float []  7.2013e-2
+```

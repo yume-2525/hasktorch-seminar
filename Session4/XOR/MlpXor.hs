@@ -3,7 +3,7 @@
 {-# LANGUAGE FunctionalDependencies #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Main where
+module MlpXor where
 
 import Control.Monad (when)
 import Data.List (foldl', intersperse, scanl')

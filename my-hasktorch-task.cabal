@@ -79,6 +79,7 @@ executable session-3-graduate-admission-linear
 executable session-4-mlpxor
   main-is: MlpXor.hs
   other-modules:
+      MlpXor2
       Paths_my_hasktorch_task
   autogen-modules:
       Paths_my_hasktorch_task
@@ -92,10 +93,29 @@ executable session-4-mlpxor
     , my-hasktorch-task
   default-language: Haskell2010
 
+executable session-4-mlpxor2
+  main-is: MlpXor2.hs
+  other-modules:
+      MlpXor
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session4/XOR
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+  default-language: Haskell2010
+
 executable session-4-perceptron-and-gate
   main-is: PerceptronAndGate.hs
   other-modules:
       XOR.MlpXor
+      XOR.MlpXor2
       Paths_my_hasktorch_task
   autogen-modules:
       Paths_my_hasktorch_task
