@@ -209,6 +209,8 @@ stateを、学習率1e-1の勾配降下法で更新する。
 
 ### c. Analyze the differences between this implementation and the hasktorch version. Modify your code for enhanced readability.
 
+--**コードの解析**--
+
 ```
 trainingData :: [([Float],Float)]
 trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
@@ -297,4 +299,35 @@ initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを�
 [1.0,0.0]: Tensor Float []  0.9395   
 [0.0,1.0]: Tensor Float []  0.9266   
 [0.0,0.0]: Tensor Float []  7.2013e-2
+```
+
+--**二つのコードの違い**--
++ hasktorch-toolsのセット（MLPHypParams, mlpLayer, updateなど）を使って簡潔に書いている
++ データを記録するデバイスを定義している
++ 更新の過程を記録している
++ 訓練データ以外の数値をmain関数の中で定義している
+
+--**可読性を高める修正**--
+以下のように、mainの外で変数を定義してmainを簡素にした。  
+```
+device :: Device
+device = Device CPU 0
+
+myinputDim :: Int
+myinputDim = 2
+
+mylayerSpecs :: [(Int,ActName)]
+mylayerSpecs = [(3,Sigmoid),(1,Sigmoid)]
+
+iter :: Int
+iter = 1500
+
+learningRate :: Tensor
+learningRate = asTensor (1e-1 :: Float)
+
+batchSize :: Int
+batchSize = 10
+
+trainingData :: [([Float],Float)]
+trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 ```
