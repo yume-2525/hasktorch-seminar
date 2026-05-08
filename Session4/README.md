@@ -1,41 +1,42 @@
 ## 1. Build and train an AND gate using a simple perceptron
-#### 考えの過程
+#### Process
 
-templateを参考にすると、以下のことが考えられる。
+Based on template, the following points can be considered.
 
 step  
-* 引数１：Tensor（スカラー）、（入力値）＊（重み）の合計
-* 返り値：Tensor（スカラー）、結果
-* 機能：スカラーのTensorを受け取って、正の数は１、それ以外は０を返す関数
+* argument１：Tensor（Scalar）、sum（input）＊（weight）
+* return value：Tensor（Scalar）、result
+* behavior：A function that takes a scalar tensor as input and returns 1 if it is positive, and returns 0 otherwise. 
 
 percepron  
-* 引数１：Tensor（２変数ベクトル）、入力
-* 引数２：Tensor（２変数ベクトル）、重み
-* 引数３：Tensor（スカラー）、バイアス
-* 返り値：Tenor（スカラー）、活性化関数に渡す値
-* 機能：(x,y)の入力に対して重みとバイアスを含めて計算して和を取ったものを返す。
+* argument１：Tensor（2vector）、input
+* argument２：Tensor（2vector）、weight
+* argument３：Tensor（Scalar）、bias
+* return value：Tenor（Scalar）、input to the activation function
+* behavior：A function that takes (x, y) as input and returns what it computes the sum including the weights and bias.
 
 caluclateError  
-* 引数１：Tensor（スカラー）、stepの結果
-* 返り値：Tensor（スカラー）、誤差
-* 機能：誤差を計算する関数
-* 備考：引数を二つにして、結果と正解を参照して誤差を返す関数にしたほうが良い？
+* argument１：Tensor（Scalar）、stepのresult
+* return value：Tensor（Scalar）、error
+* behavior：A function that cluclates error.
+* notes：Dose it prefer that I chenge two argments and make a function that returns the result by seeing result and correct value?
 
-また、[Note](https://medium.com/analytics-vidhya/implementing-perceptron-learning-algorithm-to-solve-and-in-python-903516300b2f)を読んで以下のような流れであることを理解しました。
+Also、I read [Note](https://medium.com/analytics-vidhya/implementing-perceptron-learning-algorithm-to-solve-and-in-python-903516300b2f) and understood the following flow.
 
-1. ランダムな重みとバイアス、それから訓練セットを設定する。（Σ（入力値）＊（重み））＋（バイアス）を計算する。
-2. step関数にかける。
-3. percepron関数で上記を行い、予測値を出す。
-4. calculateError関数で、誤差を計算する。
-5. 繰り返しの上限回数と学習率を設定。誤差の合計が０になるか、繰り返し回数が上限に達するまで重みとバイアスの更新を繰り返す。重みの更新は（新しい値）＝（古い値）＋（学習率）*（誤差）＊（関係する入力値）、バイアスの更新は、（新しい値）＝（古い値）+（学習率）＊（誤差）で計算する。
+1. Set random wight, bias, and training sets. Culculate （Σ（input）＊（weight））＋（bias）
+2. Pass the value through the step function.
+3. Perform the above process in the perceptron function to obtain the predicted value.
+4. Compute the error using calculateError.
+5. Set the maximum number of iterations and the learning rate. Repeat updating the weights and bias until the sum of errors becomes zero or the numper of iterations reaches the maximum limit. The wights are updated using (new value) = (old value) + (leaning rate) * (error) * (corresponding input), and the bias is updated using (new value) = (old value) + (leaning rate) * (error).
 ![](./memo_02.png)
 
-結果は以下のように予測できる。
+The result can be predicted as follows.
 ![](./memo_01.png)
 
-疑問点：いつ重みを更新している？→各データごと（1エポック毎ではない）
+Question：When are the weights updated?  
+→The weights are updated after each data sample, not after each epoch.
 
-#### 実行結果
+#### executing result
 ```
 weight : [4.42507,4.7318616], bias : -4.811824
 Input: [1,1] | Predict: 1.0 | Target: 1 | Score: OK (Before step: 4.345107)
@@ -56,8 +57,9 @@ data MLPSpec = MLPSpec
     nonlinearitySpec :: Tensor -> Tensor
   }
   ```
-  多層パーセプトロンの構造  
-  feature_counts：それぞれの層に幾つのパラメータを持つか　nonlinearitySpec：活性化関数
+  Structure of multilayer perceptron  
+  feature_counts：the number of parameters in each layer　
+  nonlinearitySpec：the activation function
 
   ```
   data MLP = MLP
@@ -69,8 +71,9 @@ data MLPSpec = MLPSpec
 > data Linear  
 > weight :: Parameter	   
 > bias :: Parameter  
-  多層パーセプトロンの中身  
-  layers：それぞれの層での重みとバイアス　nonlinearity：活性化関数
+  Contents of the multilayer perceptron  
+  layers：weights and biases of each layer  
+  nonlinearity：activation function
 
 ```
 instance Randomizable MLPSpec MLP where
@@ -86,7 +89,7 @@ instance Randomizable MLPSpec MLP where
 ```
 > class Randomizable spec f | spec -> f where  
 > sample :: spec -> IO f  
-> sample：関数　spec：構造　f：実体　（乱数入りの実体を作る）
+> sample：function　spec：structure　f：contents　（Create value containing random numbers)
 
 >scanl :: (b -> a -> b) -> b -> [a] -> [b]   
 >scanl is similar to foldl, but returns a list of successive reduced values from the left:  
@@ -99,13 +102,13 @@ instance Randomizable MLPSpec MLP where
 > data LinearSpec   
 > in_features :: Int     
 > out_features :: Int  
-> in_features：入力数　out_features：出力数
+> in_features：input size　out_features：出力 size
 
-ここで行なっていること：MLPSpecを受け取って、その形の乱数を詰め込んだMLPを返している
-mkLayerSizes：リストを受け取って、隣り合った二個ずつのペアのリストを返す関数 e.g. [1,2,3]->[(1,2),(2,3)]  
-layer_sizes：（入力数、出力数）のリスト e.g. [（１層目のパラメータ数、２層目のパラメータ数）,（2層目のパラメータ数、3層目のパラメータ数）..]  
-linears：layer_sizesをLinearSpec型に変換したもの  
-sample：MLPSpecの構造をしたレコードをうけとってMLPを返す関数
+Behavior：Teceives an MLPSpec and returns an MLP filled with random values of the specified shape.
+mkLayerSizes：A function that takes a list and returns a list of adjacent pairs. e.g. [1,2,3]->[(1,2),(2,3)]  
+layer_sizes：a list of （input size、output size） e.g. [（number of parameters in the １ layer、number of parameters in the ２ layer）,（number of parameters in the 2 layer、number of parameters in the 3 layer）..]  
+linears：layer_sizes conberted into the LinearSpec type 
+sample：a function that takes a record with the structure of NLPSpec and returns an MLP
 
 
 ```
@@ -119,32 +122,32 @@ mlp MLP {..} input = foldl' revApply input $ intersperse nonlinearity $ map line
 > e.g. intersperse ',' "abcde" >> "a,b,c,d,e"、intersperse 1 [3, 4, 5] >> [3,1,4,1,5]  
 
 > linear :: Linear -> Tensor -> Tensor  
-（一層分の（入力値）＊（重み）＋（バイアス）を計算する関数）
+（A funbrion that computes（input値）＊（weight）＋（bias）for one layer）
 
-引数１：MLP、多層パーセプトロンの中身  
-引数２：Tensor（ベクトル）、入力値  
-返り値：Tensor（ベクトル）、結果
-機能：入力値に対して各層の重みとベクトル、活性化関数を使って計算し結果を返す。
+argument１：MLP、the contents of the multilayer perceptron  
+argument２：Tensor（vector）、input values  
+return value：Tensor（vector）、result
+behavior：Computes the result using the wights, biases, and activation functions of each layer for the given input values, and returns the resulting vector.
 
 
 ```
 batchSize = 2
 ```
-一回のループで使うデータ数
+The number of data sumples used in one loop.
 
 ```
 numIters = 2000
 ```
-繰り返しの上限回数
+The maxmum number of iterations
 
 ```
 model :: MLP -> Tensor -> Tensor
 model params t = mlp params t
 ```
-引数１：MLP、多層パーセプトロンの中身
-引数２：Tensor（ベクトル）、入力値
-返り値：Tensor（ベクトル）、結果
-機能：入力値に対して各層の重みとベクトル、活性化関数を使って計算し結果を返す。（mlpを使う関数）
+argument１：MLP、Contents of multilayer perceptron
+argument２：Tensor（vector）、input value
+return value：Tensor（vector）、result
+behavior：Computes the result using the wights, biases, and activation functions of each layer for the given input values, and returns the resulting vector.（A function uses the mlp）
 
 ```
 main :: IO ()
@@ -156,25 +159,26 @@ main = do
           nonlinearitySpec = Torch.tanh
         }
 ```
-initに、入力値：２ノード数、中間層：２ノード数、出力値：１ノード数、活性化関数：tanh、それぞれの重みは乱数の多層パーセプトロンを設定する。
+In init, a multilayer perceptron is initialized with 2 input nodes, 2 hidden-layer nodes, 1 output node, the tanh activation functionm and randomly initialized weights.
 
 ```
   trained <- foldLoop init numIters $ \state i -> do
     input <- randIO' [batchSize, 2] >>= return . (toDType Float) . (gt 0.5)
 ```
 > ">>="：Sequentially compose two actions, passing any value produced by the first as an argument to the second. 'as >>= bs' can be understood as the do expression  
-> return . (toDType Float) . (gt 0.5)：.は関数合成演算子。右から順に処理される。よって、ここではまず0.5より大きいかを判定し、その結果をFloatに変換し、最後にreturnする。  
+> return . (toDType Float) . (gt 0.5)：. is the function composition operatorm and the functions are applied from right to left. Therefore, it first checks whether the value is freater than 0.5, then converts the result to Float, and finally returns it.
 
-traindに繰り返し訓練された重み等(state)が代入される。  
-inputはランダムな訓練データ。
+trained stores the repeatedly trained weights and other parameters(state).
+input is randomly generated training data.
 ```
     let (y, y') = (tensorXOR input, squeezeAll $ model state input)
         loss = mseLoss y y'
 ```
 > squeezeAll :: Tensor -> Tensor  
-> サイズが１しかない不要な次元をすべて削ぎ落とす。今回は出力が１なので、Tenosrの一次元ベクトルに圧縮される。  
+> Remoces all unnecessary dimensions whose size is 1. Since the output size is 1 in this case, the Tensor is compressed into a one-dimensional vector. 
 
-誤差を計算。
+Calclates the error.  
+
 ```
     when (i `mod` 100 == 0) $ do
       putStrLn $ "Iteration: " ++ show i ++ " | Loss: " ++ show loss
@@ -183,13 +187,14 @@ inputはランダムな訓練データ。
 ```
 > runStep :: (Parameterized model, Optimizer optimizer) => 
 > model -> optimizer -> Tensor -> LearningRate -> IO (model, optimizer)  
-> 引数１：model、訓練中のデータ  
-> 引数２：optimizer、更新する方法  
-> 引数３：Tensor(スカラー)、誤差  
-> 引数４：LearningRate 、学習率  
-> 返り値：（更新後のデータ、更新の記録）  
+> argument１：model、the data currently being trained 
+> argument２：optimizer、the update method  
+> argument３：Tensor(Scalar)、error  
+> argument４：LearningRate 、learning rate  
+> return value：（updated data、update history）  
 
-stateを、学習率1e-1の勾配降下法で更新する。
+Updates state using gradient descent with a learning rate of 1e-1  
+
 ```
   putStrLn "Final Model:"
   putStrLn $ "0, 0 => " ++ (show $ squeezeAll $ model trained (asTensor [0, 0 :: Float]))
@@ -205,19 +210,19 @@ stateを、学習率1e-1の勾配降下法で更新する。
         a = select 1 0 t
         b = select 1 1 t
 ```
-最終的な値でテストする。
+Test using final value.
 
 ------------------
 
 ### c. Analyze the differences between this implementation and the hasktorch version. Modify your code for enhanced readability.
 
-####コードの解析
+####Code Analysis
 
 ```
 trainingData :: [([Float],Float)]
 trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 ```
-10個の訓練データを作る。  
+Creates 10 training data samples.  
 
 ```
 main :: IO()
@@ -231,12 +236,12 @@ main = do
 > inputDim :: Int,  
 > layerSpecs :: [(Int,ActName)]  
 > } deriving (Eq, Show)  
-パーセプトロンの構成を形成する。今回は、使用するデバイスはDevice CUDA 0、入力層はノード数２、中間層のノード数３、入力層と中間層の間の活性化関数はシグモイド関数、出力層のノード数は１、中間層と出力層の活性化関数はシグモイド関数のパーセプトロンを構成している。  
+Constructs the configuration of the perceptron. In this case, the perceptron uses Device CUDA 0, has 2 nodes in the input layer, 3 nodes in the hiddin layer, and 1 node in the outout layer. The sigmoid function is used as the activation function between the input and hidden layers, as well as between the hidden and output layers.
 
 ```
   initModel <- sample hypParams
 ```
-initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを代入している。  
+initModel is assigned a structure based on hyParames and filled with random values.  
 
 ```
   ((trainedModel,_),losses) <- mapAccumM [1..iter] (initModel,GD) $ \epoc (model,opt) -> do
@@ -255,36 +260,36 @@ initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを�
 >                           bc <- f x prev  
 >                           return (fst bc, (snd bc):lst)  
 >                           ) (zero,[]) xs  
-> 機能：状態を更新しながら、毎回の記録も取っておく関数  
-> 引数１：畳み込み可能なa、繰り返し回数のリスト  
-> 引数２：b、初期値  
-> 引数３：(a->b->m (b,c))、関数  
+> behavior：A function that updates the state while also keeping a record of each stap.  
+> argument１：foldable a, a list of iteration counts  
+> argument２：b、the initial value  
+> argument３：(a->b->m (b,c))、function  
 
-> for：mapの引数をひっくり返した関数  
+> for：a function with the arguments of map reversed  
 
-> asTensor''：Tensor型のデータと、それを格納するデバイスを指定できる関数  
+> asTensor''：a function that creates Tensor data while specifying the device on which it is stored  
 
-> mlpLayer：パーセプトロンのモデルと入力値を与えて出力値を計算する関数  
+> mlpLayer：a function that calculates the output value given a perceptron model and input values  
 
-> mseLoss：二乗平均誤差を計算する関数  
+> mseLoss：a function that calculates the mean squared error  
 
-> sumTensors：１０個の訓練データの二乗平均誤差を合計している  
+> sumTensors：sums the mean squared errors of the 10 traing data samples  
 
-> showLess：１０回に一回誤差を表示する。  
+> showLess：displays the error once every 10 iterations  
 
-> update：現在のモデル、更新方法、誤差、学習率を渡して改善したモデルを返す関数  
+> update：a function that takes the current model, optimization method, error, and learning rate, and returns the improved model  
 
-役割：初期値がinitModel、GD(勾配降下法)でiter回数だけ更新したパーセプトロンのモデルとその時の誤差をtrainModelとlossesに代入している。
+Behavior：trainModel and losses are assigned the perceptron model obtained by updation the initial value initModel using GD(gradient descent) for iter iterations, along with the errors during training.
 
 
 ```
   drawLearningCurve "graph-xor.png" "Learning Curve" [("",reverse losses)]
 ```
 > drawLearningCurve  
-> 引数１：ファイル名
-> 引数２：グラフのタイトル
-> 引数３：[（名前、データのリスト）]
-学習曲線を描画  
+> argument１：ファイル名
+> argument２：グラフのタイトル
+> argument３：[（name、a list of data）]
+Plot the learning curve.  
 ![](./graph-xor.png)
 
 ```
@@ -295,7 +300,7 @@ initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを�
   -- print trainedModel
   where for = flip map
   ```
-最終的な学習結果を表示  
+Display the final training result.  
 ```
 [1.0,1.0]: Tensor Float []  5.4089e-2
 [1.0,0.0]: Tensor Float []  0.9395   
@@ -303,14 +308,14 @@ initModelに、hypParamesの構造を持ち乱数が埋め込まれたものを�
 [0.0,0.0]: Tensor Float []  7.2013e-2
 ```
 
-####二つのコードの違い
-+ hasktorch-toolsのセット（MLPHypParams, mlpLayer, updateなど）を使って簡潔に書いている
-+ データを記録するデバイスを定義している
-+ 更新の過程を記録している
-+ 訓練データ以外の数値をmain関数の中で定義している
+####Differences between the two codes
++ Uses the hasktorch-tools set（MLPHypParams, mlpLayer, updateなど）, making the code more concise.
++ Difines the device used to store the data
++ Records the update process during training.
++ Defines numerical values othe than the training data indside the main function.
 
-####可読性を高める修正
-以下のように、mainの外で変数を定義してmainを簡素にした。  
+####Modifications to improve readaility
+Variables were defined outside the main functio a s shown below, making the main function simpler and easier to read.  
 ```
 device :: Device
 device = Device CPU 0
@@ -337,8 +342,8 @@ trainingData = take 10 $ cycle [([1,1],0),([1,0],1),([0,1],1),([0,0],0)]
 ------------------
 
 ### b. Experiment with XOR using a step function.
-MlpXor.hsを参考にし、活性化関数をステップ関数にして実行した。  
-→エラーが起きて結果が出ない。  
+Referring to MlpXor.hs, the activation function was changed to a step function and the code was executed.   
+→An error occurred and no result was produced. 
 
-**考察**  
-ステップ関数は微分できないかつ、傾きが０または急激になるため適切な勾配が出せず、モデルの更新ができない。
+**Discussion**  
+The step function is not differentiable, and its gradient is either 0 or changes abruptly. As a result, an appropriate gredient cannnot be computed, making it impossible to properly update the model.
