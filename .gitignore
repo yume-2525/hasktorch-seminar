@@ -2,6 +2,7 @@
 .stack-work/
 dist-newstyle/
 Session3/data/
+Session5/data/
 
 # Dockerの一時ファイル
 .docker-compose/
