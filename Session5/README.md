@@ -1,5 +1,6 @@
 # Hands-on tasks
 ## 1. Evaluation.hs
+Defined functions  
 + TP, TN, FP, FN
 + Accuracy  
     (TP + TN) / length
@@ -13,11 +14,10 @@
     2 * Precision * Recall / (Precision + Recall)
 + f1_class0
     Calculated by inverting the labels for Positive and Negative.
-
-・micro-F1 score、 macro-F1 score、 weighted F1-score（to evaluate models with two classes (0 and 1).）
++ micro-F1 score、 macro-F1 score、 weighted F1-score（to evaluate models with two classes (0 and 1).）
 
 ## 2. Admit.hs
-Developed a model using CGPA and GREScore as primary features. Based on the previous MlpXor.hs, the following things were improvements:
+Developed a model using CGPA and GREScore as primary features. Based on the previous MlpXor.hs, the following things were improvements:  
 ・Loss Calculation：changed from sumTensor to a mean-based approach. 
 ・Data Standardization：（origin val）ー（mean））/（std）  
 ・The number of iteration  
@@ -35,6 +35,13 @@ Each graph is at Session5/result_graph/.
 | (Relu,binaryCrossEntropyLoss) | 0.9333           | 0.0543                         | 0.9359              | 0.0506                            | 0.9373           | 0.047                          |
 | (Tanh,mseLoss)                | 0.9328           | 0.0219                         | 0.9349              | 0.0211                            | 0.9353           | 0.0208                         |
 | (Tanh,binaryCrossEntropyLoss) | 0.9345           | 0.0211                         | 0.9357              | 0.0203                            | 0.9353           | 0.0211                         |
+
+#### Discussion
++ mesLoss VS. binaryCrossEntropyLoss  
+    Accoding to the table, the score using binaryCrossEntoropyLoss is higher.
++ Relu VS. tanh
+    In terms of average scores, the scores are slightly higher when using ReFU. However since the standard deviation is lower when using tanh, it can be said that tanh provides greater stability.
+(Based on these results, binaryCrossEntropyLoss and tanh were used in the case of the Titanic.)
 
 ##  4. Make a survey on loss functions such as negative log entropy, cross entropy and KL divergence.
 ### Negative Log Entropy
