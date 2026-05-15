@@ -2,14 +2,14 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Admit where
+module Admit_kld where
 
 import Prelude hiding (tanh) 
 import Control.Monad (forM_)        --base
 --import Data.List (cycle)          --base
 --hasktorch
 import Torch.Tensor       (asValue,Tensor,asTensor)
-import Torch.Functional   (mseLoss, binaryCrossEntropyLoss, Reduction(..))
+import Torch.Functional   (mseLoss, binaryCrossEntropyLoss, nllLoss', klDiv, logSoftmax,Dim(..), Reduction(..))
 import Torch.Device       (Device(..),DeviceType(..))
 import Torch.NN           (sample)
 import Torch.Train        (update,showLoss,sumTensors)
@@ -51,7 +51,7 @@ myinputDim :: Int
 myinputDim = 2
 
 mylayerSpecs :: [(Int,ActName)]
-mylayerSpecs = [(5, Tanh),(1, Sigmoid)]
+mylayerSpecs = [(5, Tanh),(2, Id)]
 
 iter :: Int
 iter = 1300
@@ -74,29 +74,37 @@ main = do
   testData <- loadCSV "Session5/data/eval.csv"
 
   let dataCount = asTensor'' device (fromIntegral (length trainingData) :: Float)
-  let tensorData = map (\(input, output) -> (asTensor'' device input, asTensor'' device output)) trainingData
-
+--   let tensorData = map (\(input, output) -> (asTensor'' device input, asTensor'' device output)) trainingData
+  let tensorData = map (\(input, output) -> 
+            let targetDist = if output >= border then [0.0, 1.0] else [1.0, 0.0] :: [Float]
+            in (asTensor'' device input, asTensor'' device targetDist)
+          ) trainingData
   let hypParams = MLPHypParams device myinputDim mylayerSpecs
   initModel <- sample hypParams
 
   ((trainedModel,_),losses) <- mapAccumM [1..iter] (initModel,GD) $ \epoc (model,opt) -> do
       let loss = sumTensors $ for tensorData $ \(input,output) ->
-                  let y' = mlpLayer model input
+                --   let y' = mlpLayer model input
                 --   in mseLoss output y'
-                      w = asTensor'' device (1.0 :: Float)
-                  in binaryCrossEntropyLoss ReduceMean output w y'
+                    --   w = asTensor'' device (1.0 :: Float)
+                --   in binaryCrossEntropyLoss ReduceMean output w y'
+                  let rawOutput = mlpLayer model input
+                      logProbs = logSoftmax (Dim 0) rawOutput 
+                  in klDiv ReduceMean logProbs output
           meanLoss = loss / dataCount
           lossValue = (asValue meanLoss)::Float 
       showLoss 10 epoc lossValue 
       u <- update model opt meanLoss learningRate
       return (u, lossValue)
 
-  drawLearningCurve "Session5/result_graph/graph-losses-binaryCrossEntropyLoss-tanh.png" "Learning Curve" [("",reverse losses)]
+  drawLearningCurve "Session5/result_graph/graph-losses-KLDLoss-tanh.png" "Learning Curve" [("",reverse losses)]
 --   forM_ ([[1,1],[1,0],[0,1],[0,0]::[Float]]) $ \input -> do
 --       putStr $ show $ input
 --       putStr ": "
 --       putStrLn $ show ((mlpLayer trainedModel $ asTensor'' device input))
     -- print trainedModel
+
+  -- (これより上の学習ループ部分はそのまま)
 
   let testInputs = map fst testData
   let testActuals = map snd testData

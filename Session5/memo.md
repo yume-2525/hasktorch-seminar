@@ -37,14 +37,14 @@
 ## 1. Evaluation.hs
 作成した関数
 + TP, TN, FP, FN
-+ Accracy  
++ Accuracy  
     (TP + TN) / length
 + Precision
     TP / (TP + FP)
 + Recall
     TP / (TP + FN)
 + Confusion Matrix
-    [[TP,NP],[FP,FN]]
+    [[TP,TN],[FP,FN]]
 + f1_class1
     2 * Precision * Recall / (Precision + Recall)
 + f1_class0
@@ -53,13 +53,21 @@
 ・micro-F1 score、 macro-F1 score、 weighted F1-score（１と０の二つのクラスある！）
 
 ## 2. Admit.hs
-なんのデータで予測した？
+CGPAとGREScoreを特徴量として使用。
+前回作ったMlpXor.hsをベースにし、以下の点を変更した。
+・lossをsumTensorから平均にする  
+・データの値を慣らす（（元の値）ー（平均値））/（標準偏差）  
+・繰り返し回数  
+・勾配関数  
+・損失関数  
+・多層パーセプトロンのノード数  
 
 ## 3. Evaluate Ex.2 model.
-400個のデータで訓練し51個のデータで評価した
-隠れ層の活性化関数（Relu,Tanh）
-損失関数（mseLoss,binaryCrossEntropyLoss）
-四通りで10回ずつ実行し平均と分散を求める。
+400個のデータで訓練し51個のデータで評価した  
+隠れ層の活性化関数（Relu,Tanh）  
+損失関数（mseLoss,binaryCrossEntropyLoss）  
+四通りで10回ずつ実行し平均と分散を求めた。  
+各グラフはSession5/result_gragh/にある。
 
 |                               | Mean（Macro F1） | Standard Deviation（Macro F1） | Mean（Weighted F1） | Standard Deviation（Weighted F1） | Mean（Micro F1） | Standard Deviation（Micro F1） |
 |-------------------------------|------------------|--------------------------------|---------------------|-----------------------------------|------------------|--------------------------------|
@@ -70,22 +78,48 @@
 
 ##  4. Make a survey on loss functions such as negative log entropy, cross entropy and KL divergence.
 ### Negative Log Entropy
-Difinition: 
+Definition：  
+$-\log P(x)$  
 
-$$
--\log P(x)
-$$
+Use cases：  
+猫かそれ以外かなど、一つのことについて当てはまるか判断したい時。  
+正解に対する確信度を最大化したい時。 
+
+実行結果：  
+Macro F1 : 0.8712121  
+Weighted  F1 : 0.87789667  
+Micro F1 : 0.88235295  
+
+![](./result_graph/graph-losses-binaryCrossEntropyLoss-tanh.png)
+
 
 ### Cross Entropy
-Difinition:  
+Definition:  
+$H(p,q) = -\sum P(x) \log Q(x)$  
+Use cases：  
+猫か犬かうさぎかを判断したい時、結果と訓練データにどれくらい相違があるか知りたい時。  
 
-$$
-H(p,q) = -\sum P(x) \log Q(x)
-$$
+実行できなかった。
 
 ### KL Divergence
-Difinition:  
+Definition:  
+$D_{KL}(p||q) = \sum P(x) \log \left( \frac{P(x)}{Q(x)} \right)$  
+Use cases：  
+AIが作ったモデルと現実のモデルの差異を計りたい時。
 
-$$
-D_{KL}(p||q) = \sum P(x) \log \left( \frac{P(x)}{Q(x)} \right)
-$$
+実行結果：  
+Macro F1 : 0.96003133  
+Weighted  F1 : 0.9609995  
+Micro F1 : 0.9607843  
+![](./result_graph/graph-losses-KLDLoss-tanh.png)
+
+## 5. Titanic.hs
+
+#### 実行結果  
+```
+Macro F1 : 0.77618784
+Weighted  F1 : 0.79649377
+Micro F1 : 0.79888266
+```
+
+Public Score：0.76555

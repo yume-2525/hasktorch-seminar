@@ -142,6 +142,52 @@ executables:
     - vector
     - foldl
 
+  session-5-admit-copy:
+    main:                Admit_copy.hs
+    source-dirs:         Session5
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - nlp-tools
+    - cassava 
+    - bytestring    
+    - vector
+    - foldl
+
+  session-5-admit-kld:
+    main:                Admit_kld.hs
+    source-dirs:         Session5
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - nlp-tools
+    - cassava 
+    - bytestring    
+    - vector
+    - foldl
+
+  session-5-titanic:
+    main:                Titanic.hs
+    source-dirs:         Session5
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - cassava         
+    - vector         
+    - bytestring      
+    - foldl           
+    - random-shuffle  
+    - nlp-tools
+
 tests:
   my-hasktorch-task-test:
     main:                Spec.hs

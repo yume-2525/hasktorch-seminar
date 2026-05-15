@@ -2,14 +2,14 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE RecordWildCards #-}
 
-module Admit where
+module Admit_copy where
 
 import Prelude hiding (tanh) 
 import Control.Monad (forM_)        --base
 --import Data.List (cycle)          --base
 --hasktorch
 import Torch.Tensor       (asValue,Tensor,asTensor)
-import Torch.Functional   (mseLoss, binaryCrossEntropyLoss, Reduction(..))
+import Torch.Functional   (mseLoss, binaryCrossEntropyLoss, nllLoss', logSoftmax,Dim(..), Reduction(..))
 import Torch.Device       (Device(..),DeviceType(..))
 import Torch.NN           (sample)
 import Torch.Train        (update,showLoss,sumTensors)
@@ -51,7 +51,7 @@ myinputDim :: Int
 myinputDim = 2
 
 mylayerSpecs :: [(Int,ActName)]
-mylayerSpecs = [(5, Tanh),(1, Sigmoid)]
+mylayerSpecs = [(5, Tanh),(2, Id)]
 
 iter :: Int
 iter = 1300
@@ -74,24 +74,30 @@ main = do
   testData <- loadCSV "Session5/data/eval.csv"
 
   let dataCount = asTensor'' device (fromIntegral (length trainingData) :: Float)
-  let tensorData = map (\(input, output) -> (asTensor'' device input, asTensor'' device output)) trainingData
-
+--   let tensorData = map (\(input, output) -> (asTensor'' device input, asTensor'' device output)) trainingData
+  let tensorData = map (\(input, output) -> 
+            let targetIdx = if output >= border then 1 else 0 :: Int
+            in (asTensor'' device input, asTensor'' device targetIdx)
+          ) trainingData
   let hypParams = MLPHypParams device myinputDim mylayerSpecs
   initModel <- sample hypParams
 
   ((trainedModel,_),losses) <- mapAccumM [1..iter] (initModel,GD) $ \epoc (model,opt) -> do
       let loss = sumTensors $ for tensorData $ \(input,output) ->
-                  let y' = mlpLayer model input
+                --   let y' = mlpLayer model input
                 --   in mseLoss output y'
-                      w = asTensor'' device (1.0 :: Float)
-                  in binaryCrossEntropyLoss ReduceMean output w y'
+                    --   w = asTensor'' device (1.0 :: Float)
+                --   in binaryCrossEntropyLoss ReduceMean output w y'
+                  let rawOutput = mlpLayer model input
+                      logProbs = logSoftmax (Dim 0) rawOutput 
+                  in nllLoss' output logProbs
           meanLoss = loss / dataCount
           lossValue = (asValue meanLoss)::Float 
       showLoss 10 epoc lossValue 
       u <- update model opt meanLoss learningRate
       return (u, lossValue)
 
-  drawLearningCurve "Session5/result_graph/graph-losses-binaryCrossEntropyLoss-tanh.png" "Learning Curve" [("",reverse losses)]
+--  drawLearningCurve "Session5/result_graph/graph-losses-nllLoss-tanh.png" "Learning Curve" [("",reverse losses)]
 --   forM_ ([[1,1],[1,0],[0,1],[0,0]::[Float]]) $ \input -> do
 --       putStr $ show $ input
 --       putStr ": "
@@ -101,13 +107,32 @@ main = do
   let testInputs = map fst testData
   let testActuals = map snd testData
 
-  let predictions = map (\input -> let y' = mlpLayer trainedModel $ asTensor'' device input; y'' = asValue y' :: Float in if y'' >= border then 1 else 0) testInputs
+  -- 安全装置付きの予測ロジック
+  let predictions = map (\input -> 
+          let y' = mlpLayer trainedModel $ asTensor'' device input
+              vals = asValue y' :: [Float]
+          in if length vals >= 2 
+             then if (vals !! 1) >= (vals !! 0) then 1 else 0
+             else error ("エラー！AIの出力が異常です: " ++ show vals)
+        ) testInputs
 
   let actuals = map (\y -> if y >= border then 1 else 0) testActuals
 
-  putStrLn "=== Evaluation Results ==="
+  -- ★追加：F1スコア計算の前に、実際に何を予測したかを表示する
+  putStrLn "=== Debug: Predictions ==="
+  putStrLn $ "Actuals: " ++ show (take 10 actuals) ++ "..."
+  putStrLn $ "Predict: " ++ show (take 10 predictions) ++ "..."
+  
+  -- ★追加：もし予測がすべて同じ値だった場合の警告
+  let allZero = all (== 0) predictions
+      allOne  = all (== 1) predictions
+  if allZero || allOne 
+  then putStrLn "\n【警告】AIがすべて同じ結果を予測しています。Evaluation.hs がクラッシュする可能性があります！"
+  else putStrLn "\n予測結果には 0 と 1 が両方含まれています。正常に計算できるはずです。"
+
+  putStrLn "\n=== Evaluation Results ==="
   putStrLn $ "Macro F1 : " ++ show (macroF1 actuals predictions)
   putStrLn $ "Weighted  F1 : " ++ show (weightedF1 actuals predictions)
   putStrLn $ "Micro F1 : " ++ show (microF1 actuals predictions)
-
+  
   where for = flip map
