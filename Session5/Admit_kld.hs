@@ -104,8 +104,6 @@ main = do
 --       putStrLn $ show ((mlpLayer trainedModel $ asTensor'' device input))
     -- print trainedModel
 
-  -- (これより上の学習ループ部分はそのまま)
-
   let testInputs = map fst testData
   let testActuals = map snd testData
 
