@@ -127,3 +127,4 @@ Public Score：0.76555
 ## memo
 データは三分割！
 （train用とevaluation用しか用意していなかった。グラフは2本(trainとvalid)になるはず！）
+損失関数の2つ目は1.3でやってるやつかも
