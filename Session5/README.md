@@ -17,8 +17,7 @@
 ・micro-F1 score、 macro-F1 score、 weighted F1-score（to evaluate models with two classes (0 and 1).）
 
 ## 2. Admit.hs
-Developed a model using CGPA and GREScore as primary features. Based on the previous MlpXor.hs, the following things were imploved:
-前回作ったMlpXor.hsをベースにし、以下の点を変更した。
+Developed a model using CGPA and GREScore as primary features. Based on the previous MlpXor.hs, the following things were improvements:
 ・Loss Calculation：changed from sumTensor to a mean-based approach. 
 ・Data Standardization：（origin val）ー（mean））/（std）  
 ・The number of iteration  
@@ -28,7 +27,7 @@ Developed a model using CGPA and GREScore as primary features. Based on the prev
 
 ## 3. Evaluate Ex.2 model.
 The model was trained on 400 samples and evaluated on 51 samples. We tested four combinations of activation functions (ReLU, Tanh) and loss functions (MSELoss, BinaryCrossEntropyLoss), running each combinations 10 times to calculate the Mean and Standard Deviation.  
-Each graph is at Session5/result_gragh/.
+Each graph is at Session5/result_graph/.
 
 |                               | Mean（Macro F1） | Standard Deviation（Macro F1） | Mean（Weighted F1） | Standard Deviation（Weighted F1） | Mean（Micro F1） | Standard Deviation（Micro F1） |
 |-------------------------------|------------------|--------------------------------|---------------------|-----------------------------------|------------------|--------------------------------|
@@ -67,7 +66,7 @@ $D_{KL}(p||q) = \sum P(x) \log \left( \frac{P(x)}{Q(x)} \right)$
 Use cases：  
 Measuring the divergence between the model's predicted distribution and the actual underlying data distribution.
 
-実行結果：  
+Evaluation Results：  
 Macro F1 : 0.96003133  
 Weighted  F1 : 0.9609995  
 Micro F1 : 0.9607843  
@@ -82,4 +81,4 @@ Weighted  F1 : 0.79649377
 Micro F1 : 0.79888266
 ```
 
-Kuggle Public Score：0.76555
+Kaggle Public Score：0.76555
