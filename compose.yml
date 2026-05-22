@@ -6,4 +6,6 @@ services:
       - .:/home/ubuntu/my-hasktorch-task
     ports:
       - "8888:8888"
-    command: jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
+    command: /bin/bash
+    tty: true          # 追加：擬似端末を割り当てる
+    stdin_open: true   # 追加：標準入力を開いたままにする

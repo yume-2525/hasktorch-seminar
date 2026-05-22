@@ -174,7 +174,6 @@ executable session-4-perceptron-and-gate
 executable session-5-admit
   main-is: Admit.hs
   other-modules:
-      Admit_copy
       Admit_kld
       Evaluation
       Titanic
@@ -225,7 +224,6 @@ executable session-5-admit-kld
   main-is: Admit_kld.hs
   other-modules:
       Admit
-      Admit_copy
       Evaluation
       Titanic
       Paths_my_hasktorch_task
@@ -250,7 +248,6 @@ executable session-5-titanic
   main-is: Titanic.hs
   other-modules:
       Admit
-      Admit_copy
       Admit_kld
       Evaluation
       Paths_my_hasktorch_task
@@ -269,6 +266,56 @@ executable session-5-titanic
     , my-hasktorch-task
     , nlp-tools
     , random-shuffle
+    , vector
+  default-language: Haskell2010
+
+executable session-6-embedding
+  main-is: Embedding.hs
+  other-modules:
+      Evaluate
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session6
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , foldl
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+    , random-shuffle
+    , utf8-string
+    , vector
+  default-language: Haskell2010
+
+executable session-6-evaluate
+  main-is: Evaluate.hs
+  other-modules:
+      Embedding
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session6
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , foldl
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+    , random-shuffle
+    , utf8-string
     , vector
   default-language: Haskell2010
 

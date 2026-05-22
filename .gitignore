@@ -4,6 +4,7 @@ dist-newstyle/
 Session3/data/
 Session5/data/
 Session5/titanic/
+Session6/data/
 
 # Dockerの一時ファイル
 .docker-compose/
