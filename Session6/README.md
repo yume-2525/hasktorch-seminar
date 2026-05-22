@@ -55,6 +55,7 @@ Iteration: 1500, Larning rate: 0.5, batchsize: 128
 | 4-2    | 50               | 1129          | 4.505044   | 1.9448819  | 1.7716535  |
 | 4-3    | 50               | 3269          | 5.849594   | 2.1417322  | 1.8582677  |
 
+<details>
 <summary>Graphs</summary>
 
 ![](./result_graph/embedding1-4.png)
@@ -81,7 +82,8 @@ Iteration: 1500, Larning rate: 0.5, batchsize: 128
 + Non-smooth loss curves:
     + Problem: The loss curve was smooth when feeding the entire dataset at once, but it became highly jagged after introducing the batchsize. This happened because I was plotting the raw training loss.
     + Solution(Important): I created a new validation dataset (valid.txt) and plotted the validation loss instead. This successfully yielded a clean, smooth curve.
-    <details>
+
+<details>
 <summary>Jagged graph</summary>
 
 ![](./result_graph/embedding1-3.png)
