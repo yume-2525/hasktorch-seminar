@@ -129,6 +129,9 @@ I used Cosine Similarity for evaluation. Since this index whether the directions
 + Question:  The evaluation wasn't good results.
     To find the cause, I exported the individual sentence vectors and their corresponding cosine similarity scores for analysis, but the cause remains unclear. Additionally, while I expected cosine similarity scores to span from -1 to 1, all computed values fell strictly within the 0 to 1 range.
 
+-> Example the predicted score is 5 but the accuarant score is 0
+ 0	You don't have to worry.	You don't have to do anything to season it.
+
 ```
 Similarity: 5.0 Score: 3.0 Difference: 2.0
 0.99999994
@@ -144,8 +147,6 @@ Similarity: 3.0 Score: 0.0 Difference: 3.0
 0.9127987
 ...
 ```
-
-
 
 > **Note:** 
 > Explanation of the Results
