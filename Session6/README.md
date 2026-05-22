@@ -126,8 +126,6 @@ I constructed the dataset by filtering the text so that when each line is tab-se
 
 ### b. Evaluate how much data the model can predict correctly using the embedding you trained in Ex. 1.
 I used Cosine Similarity for evaluation. Since this index whether the directions of the vectors are similar, it is not related to sentence length and measures similarity as a normalized ratio.
-+ Question: What is the best way to evaluate this?
-    + I calculated the mean difference, but I am unsure if this is the best approach.
 + Question:  The evaluation wasn't good results.
     To find the cause, I exported the individual sentence vectors and their corresponding cosine similarity scores for analysis, but the cause remains unclear. Additionally, while I expected cosine similarity scores to span from -1 to 1, all computed values fell strictly within the 0 to 1 range.
 
