@@ -66,6 +66,27 @@ Iteration: 1500, Larning rate: 0.5, batchsize: 128
 
 </details>
 
+diff_means is the mean of difference between the actual scores and the predicted values.  
+diff_mean1 is caluclated using this conditions.
+```
+score5 = if sim >= 0.95 then 5.0
+                     else if sim >= 0.90 then 4.0
+                     else if sim >= 0.85 then 3.0
+                     else if sim >= 0.7 then 2.0
+                     else if sim >= 0.5 then 1.0
+                     else 0.0
+ ```
+
+diff_mean2 is caluclated using this conditions.
+```
+score5 = if sim >= 0.98 then 5.0
+                     else if sim >= 0.95 then 4.0
+                     else if sim >= 0.85 then 3.0
+                     else if sim >= 0.70 then 2.0
+                     else if sim >= 0.5 then 1.0
+                     else 0.0
+```
+
 + Increasing the vector dimension reduced the loss function. (This is because the amount of information for each word increases.)
 + Expanding the word list increases the cost. (Is it because the model hasn’t fully learned each word?)
 + Tightening the conditions reduces the diff_mean. (I felt it difficult to determine the correct segmentation.)
