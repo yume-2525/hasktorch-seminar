@@ -130,3 +130,19 @@ I used Cosine Similarity for evaluation. Since this index whether the directions
     + I calculated the mean difference, but I am unsure if this is the best approach.
 + Question:  The evaluation wasn't good results.
     To find the cause, I exported the individual sentence vectors and their corresponding cosine similarity scores for analysis, but the cause remains unclear. Additionally, while I expected cosine similarity scores to span from -1 to 1, all computed values fell strictly within the 0 to 1 range.
+
+```
+Similarity: 5.0 Score: 3.0 Difference: 2.0
+0.99999994
+Similarity: 3.0 Score: 3.0 Difference: 0.0
+0.92684126
+Similarity: 3.0 Score: 0.0 Difference: 3.0
+0.90746427
+Similarity: 3.0 Score: 0.0 Difference: 3.0
+0.9351817
+Similarity: 3.0 Score: 2.0 Difference: 1.0
+0.9315257
+Similarity: 3.0 Score: 0.0 Difference: 3.0
+0.9127987
+...
+```

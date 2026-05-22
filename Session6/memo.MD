@@ -46,6 +46,10 @@ Skip-gram：入力が特定の単語で出力が周囲の単語
 実行結果
 表
 
+vector dimensionを増やすと損失関数は減った。（各単語についての情報量が増えるから）
+ワードリストを増やすとコストは増える（各単語について十分に学習しきれていない？）
+条件を厳しくするとdiff_meanが減る。（正しい段階分けが難しいと感じた）
+
 ## 2. Make sure you can take a corresponding embedding from a saved embedding by a word.
 疑問点：どうやって評価するのが良いか
 私は差の平均をとったが本当にそれで良いのか
