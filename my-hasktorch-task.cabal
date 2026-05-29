@@ -319,6 +319,51 @@ executable session-6-evaluate
     , vector
   default-language: Haskell2010
 
+executable session-7-parser
+  main-is: Parser.hs
+  other-modules:
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session7
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , utf8-string
+  default-language: Haskell2010
+
+executable session-7-review-rnn
+  main-is: reviewRNN.hs
+  other-modules:
+      Parser
+      Paths_my_hasktorch_task
+  autogen-modules:
+      Paths_my_hasktorch_task
+  hs-source-dirs:
+      Session7
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , foldl
+    , hasktorch
+    , hasktorch-tools
+    , my-hasktorch-task
+    , nlp-tools
+    , random-shuffle
+    , utf8-string
+    , vector
+  default-language: Haskell2010
+
 executable session3-linear-regression
   main-is: LinearRegression.hs
   other-modules:
