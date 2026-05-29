@@ -79,3 +79,4 @@ The conditions were: 1,000 iterations, a learning rate of 0.0001, a batch size o
 + The predicted values ended up almost entirely being 4   
 -> The model was trained to take the overall average value.
 + The RNN and MLP are affected by this because their initial values are random.
++ I thought changing the loss function or increasing the number of hidden state dimensions might help to improve the results, but I didn’t have enough time to implement these changes.
