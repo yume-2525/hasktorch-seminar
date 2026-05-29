@@ -21,7 +21,7 @@ I divided the model into an embedding layer, an RNN layer, and an MLP layer.
 
 I built the training process based on the code I wrote in the previous task.
 
-**Running the Model**
+**Running the Code**
 Because the original file was too large, I shortened the train and valid data (train: 4,000 lines, valid: 500 lines).
 I updated the weights using the train data and drew the learning curve using the valid data.
 Initially, the learning curve was jagged, but I found that making the learning rate smaller smoothed it out.
@@ -44,28 +44,28 @@ The conditions were: 1,000 iterations, a learning rate of 0.0001, a batch size o
 <details>
 <summary>The learning graphs</summary>
 
-4-1(Pre-trained)
-![](./result_graph/reviewRNN-emb-4-1.png)
-4-2(Pre-trained)
-![](./result_graph/reviewRNN-emb-4-2.png)
-4-3(Pre-trained)
-![](./result_graph/reviewRNN-emb-4-3.png)
-4-4(Pre-trained)
-![](./result_graph/reviewRNN-emb-4-4.png)
-4-5(Pre-trained)
-![](./result_graph/reviewRNN-emb-4-5.png)
+4-1(Pre-trained)  
+![](./result_graph/reviewRNN-emb-4-1.png)  
+4-2(Pre-trained)  
+![](./result_graph/reviewRNN-emb-4-2.png)  
+4-3(Pre-trained)  
+![](./result_graph/reviewRNN-emb-4-3.png)  
+4-4(Pre-trained)    
+![](./result_graph/reviewRNN-emb-4-4.png)  
+4-5(Pre-trained)  
+![](./result_graph/reviewRNN-emb-4-5.png)  
 
 
-4-1(Random)
-![](./result_graph/reviewRNN-rand-4-1.png)
-4-2(Random)
-![](./result_graph/reviewRNN-rand-4-2.png)
-4-3(Random)
-![](./result_graph/reviewRNN-rand-4-3.png)
-4-4(Random)
-![](./result_graph/reviewRNN-rand-4-4.png)
-4-5(Random)
-![](./result_graph/reviewRNN-rand-4-5.png)
+4-1(Random)  
+![](./result_graph/reviewRNN-rand-4-1.png)  
+4-2(Random)  
+![](./result_graph/reviewRNN-rand-4-2.png)  
+4-3(Random)  
+![](./result_graph/reviewRNN-rand-4-3.png)  
+4-4(Random)  
+![](./result_graph/reviewRNN-rand-4-4.png)  
+4-5(Random)  
+![](./result_graph/reviewRNN-rand-4-5.png)  
 
 </details>
 
@@ -76,5 +76,6 @@ The conditions were: 1,000 iterations, a learning rate of 0.0001, a batch size o
 
 **Discussion**
 + Was it not very good because the values were trained using CBOW?
-+ The predicted values ended up almost entirely being 4 -> The model was trained to take the overall average value.
++ The predicted values ended up almost entirely being 4   
+-> The model was trained to take the overall average value.
 + The RNN and MLP are affected by this because their initial values are random.
