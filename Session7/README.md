@@ -44,16 +44,27 @@ The conditions were: 1,000 iterations, a learning rate of 0.0001, a batch size o
 <details>
 <summary>The learning graphs</summary>
 
+4-1(Pre-trained)
 ![](./result_graph/reviewRNN-emb-4-1.png)
+4-2(Pre-trained)
 ![](./result_graph/reviewRNN-emb-4-2.png)
+4-3(Pre-trained)
 ![](./result_graph/reviewRNN-emb-4-3.png)
+4-4(Pre-trained)
 ![](./result_graph/reviewRNN-emb-4-4.png)
+4-5(Pre-trained)
 ![](./result_graph/reviewRNN-emb-4-5.png)
 
+
+4-1(Random)
 ![](./result_graph/reviewRNN-rand-4-1.png)
+4-2(Random)
 ![](./result_graph/reviewRNN-rand-4-2.png)
+4-3(Random)
 ![](./result_graph/reviewRNN-rand-4-3.png)
+4-4(Random)
 ![](./result_graph/reviewRNN-rand-4-4.png)
+4-5(Random)
 ![](./result_graph/reviewRNN-rand-4-5.png)
 
 </details>
