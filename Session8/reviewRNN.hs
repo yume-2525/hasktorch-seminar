@@ -6,12 +6,14 @@
 
 
 module Main (main) where
--- module reviewRNN (main) where 
+-- module reviewRNN (main) where
+
 import Codec.Binary.UTF8.String (encode) -- add utf8-string to dependencies in package.yaml
 import Data.Aeson (FromJSON(..), ToJSON(..), eitherDecode)
+import Data.Char (toLower)
 import qualified Data.ByteString.Lazy as B
 import qualified Data.Map.Strict as M 
-import Data.List (elemIndex)
+import Data.List (elemIndex, nub)
 import Data.Word (Word8)
 import GHC.Generics
 import Torch.NN (Parameter, Parameterized(..), Randomizable(..))
@@ -27,6 +29,7 @@ import Torch.Layer.RNN (RnnHypParams(..), RnnParams(..), rnnLayers)
 import Torch.Layer.MLP (MLPHypParams(..), MLPParams, ActName(..), mlpLayer)
 import Torch.Device (Device(..), DeviceType(..))
 import ML.Exp.Chart (drawLearningCurve)
+import Evaluation (accuracy, macroF1, weightedF1, confusionMatrix)
 
 -- amazon review data
 data Image = Image {
@@ -84,13 +87,13 @@ instance
             dev = Device CPU 0,
             bidirectional = False,  -- True if BiLSTM, False otherwise
             inputSize = wordDim,  -- The number of expected features in the input x
-            hiddenSize = wordDim, -- The number of features in the hidden state h
+            hiddenSize = 256, -- The number of features in the hidden state h
             numLayers = 1,  -- Number of recurrent layers
             hasBias = True   -- If False, then the layer does not use bias weights b_ih and b_hh.
             }
         randRNN <- sample rnnSpec
 
-        let mlpSpec = MLPHypParams (Device CPU 0) wordDim [(1, Id)]
+        let mlpSpec = MLPHypParams (Device CPU 0) 256 [(1, Id)]
         randMLP <- sample mlpSpec
 
         return $ Model randEmb randRNN randMLP
@@ -123,7 +126,8 @@ preprocess ::
 preprocess texts = map (B.split (head $ encode " ")) textLines
 -- 単語ごとに区切る　 ["I am a dog.", "I don't like dogs"]->[["I", "am", "a", "dog"], ["I", "don't", "like", "dogs"]]
   where
-    bstexts = B.pack (encode texts) -- String を ByteString に変換
+    lowerTexts = map toLower texts
+    bstexts = B.pack (encode lowerTexts) -- String を ByteString に変換
     filteredtexts = B.pack $ filter (not . isUnncessaryChar) (B.unpack bstexts)
     -- 記号を排除する "Hi!" -> "Hi"
     -- unpack(ByteString入力値->[Word8])で文字列を数字のリストに変換, isUnncessaryCharの結果をnot(Bool型を反転)し、filter（Trueになる要素だけ抜き出す）にかけて、再度pack([Word8]->ByteString)する。
@@ -154,8 +158,8 @@ forward Model{..} wordIds =
       inputs = stack (Dim 0) wordVecs     -- バラバラのベクトルを縦に重ねて、1つのまとまったテンソル(行列)にする [文章の単語数, ベクトルの次元数(wordDim)] 
 
       -- 前から順にRNNに渡す
-      wDim = last (shape weight)
-      h0 = zeros' [1, wDim]  -- 最初の単語を読む前の「初期の記憶(h0)」として、ゼロで埋まったベクトルを用意する　[記憶レイヤー数, 単語ベクトル次元数]
+
+      h0 = zeros' [1, 256]  -- 最初の単語を読む前の「初期の記憶(h0)」として、ゼロで埋まったベクトルを用意する　[記憶レイヤー数, 単語ベクトル次元数]
       
       -- RNNに処理させる
       (allOutputs, finalOutput) = rnnLayers rnn Tanh Nothing h0 inputs  -- rnnLayers 引数: (RNNの重み) (活性化関数) (ドロップアウト) (初期値) (入力データ) 戻り値: (すべてのステップの出力, 最後の記憶)
@@ -166,22 +170,22 @@ forward Model{..} wordIds =
 
 -- your amazon review json
 amazonReviewPathTrain :: FilePath
-amazonReviewPathTrain = "Session7/data/train_light.jsonl"
+amazonReviewPathTrain = "Session8/data/train_light.jsonl"
 
 amazonReviewPathValid :: FilePath
-amazonReviewPathValid = "Session7/data/valid_light.jsonl"
+amazonReviewPathValid = "Session8/data/valid_light.jsonl"
 
 amazonReviewPathTest :: FilePath
-amazonReviewPathTest = "Session7/data/test.jsonl"
+amazonReviewPathTest = "Session8/data/test.jsonl"
 
 outputPath :: FilePath
-outputPath = "Session7/data/review-texts-emb-4-1.txt"
+outputPath = "Session8/data/review-texts-emb-2.txt"
 
-embeddingPath =  "Session6/data/sample_embedding4-3.params"
+embeddingPath =  "Session8/data/glove_emb.params"
 
-wordLstPath = "Session6/data/sample_wordlst4-3.txt"
+wordLstPath = "Session8/data/glove_wordlst.txt"
 
-grahpPath = "Session7/result_graph/reviewRNN-emb-4-1.png"
+grahpPath = "Session8/result_graph/reviewRNN-emb-2.png"
 
 -- jsonをHaskellで使えるように
 decodeToAmazonReview ::
@@ -194,7 +198,7 @@ decodeToAmazonReview jsonl =
   -- examples) sequenceA [Right 1, Right 2, Right 3] -> Right [1,2,3], sequenceA [Right 1, Right 2, Right 3, Left 4] -> Left 4
 
 iter :: Int
-iter = 1000
+iter = 100
 
 learningRate :: Tensor
 learningRate = asTensor (0.0001 :: Float) 
@@ -222,12 +226,14 @@ main = do
                   Right reviews -> reviews
 
   -- load word list (It's important to use the same list as whan creating embeddings)
-  wordlst <- fmap (B.split (head $ encode "\n")) (B.readFile wordLstPath)
+  rawWordlst <- fmap (B.split (head $ encode "\n")) (B.readFile wordLstPath)
+  let wordlst = filter (not . B.null) rawWordlst
 
   -- load params (set　wordDim　and wordNum same as session5)
+  let wordLength = length wordlst
   let modelSpec = ModelSpec {
-    wordDim = 50, 
-    wordNum = 3270
+    wordDim = 300, 
+    wordNum = wordLength
   }
   -- initModel <- initializeRandom modelSpec
   initModel <- initialize modelSpec embeddingPath
@@ -254,13 +260,15 @@ main = do
           nowdataset = take batchsize (drop dropCount (cycle dataset))
       let trainLossSum = sumTensors $ map (\(wIds, targetRating) ->
               let predictedScore = forward model wIds
-                  targetTensor = asTensor [targetRating :: Float]
-              in mseLoss targetTensor predictedScore 
+                  predictedScore2x = predictedScore * asTensor (2.0 :: Float)
+                  targetTensor = asTensor [targetRating * 2.0 :: Float]
+              in mseLoss targetTensor predictedScore2x 
            ) nowdataset
       let validLossSum = sumTensors $ map (\(wIds, targetRating) ->
               let predictedScore = forward model wIds
-                  targetTensor = asTensor [targetRating :: Float]
-              in mseLoss targetTensor predictedScore
+                  predictedScore2x = predictedScore * asTensor (2.0 :: Float)
+                  targetTensor = asTensor [targetRating * 2.0 :: Float]
+              in mseLoss targetTensor predictedScore2x
            ) validset
       let meanTrainLoss = trainLossSum / (asTensor (fromIntegral batchsize :: Float))
       let lossTrainValue = (asValue meanTrainLoss) :: Float 
@@ -271,32 +279,59 @@ main = do
       return (u, lossValidValue)
 
   drawLearningCurve grahpPath "Learning Curve" [("Validation Loss",reverse losses)]
-
+  
   let allResults = map (\rev -> 
           let processed = concat $ preprocess (text rev)
               wIds = map wordToIndex processed
+              
+              -- 未知語の数をカウント: wordToIndexが (length wordlst) を返したものが未知語
+              oovCount = length $ filter (== length wordlst) wIds
+              oovCountUni = length $ filter (== length wordlst) (nub wIds)
+              totalWords = length wIds
+
               predicted = asValue (forward trainedModel wIds) :: Float
               actual = rating rev
               predictedInt = min 5 (max 1 (round predicted :: Int))
               actualInt = round actual :: Int
+              
               isCorrect = predictedInt == actualInt
-              resultText ="【正解】: " ++ show actualInt ++ " | 【予測】: " ++ show predictedInt ++ " (" ++ show predicted ++ ") | 【本文】: " ++ text rev
-          in (isCorrect, resultText)
+              resultText ="【正解】: " ++ show actualInt ++ " | 【予測】: " ++ show predictedInt ++ " (" ++ show predicted ++ ") | OOV: " ++ show oovCount ++ "/" ++ show totalWords ++ " | 【本文】: " ++ text rev
+          in (actualInt, predictedInt, oovCount, oovCountUni, totalWords, resultText)
         ) reviewsTest
-  let totalCount = length allResults
-  let correctCount = length (filter fst allResults)
-  let accuracy = (fromIntegral correctCount / fromIntegral totalCount) * 100 :: Float
-  putStrLn $ "【テストデータの正解率】: " ++ show accuracy ++ " %"
-  putStrLn $ "【正解数 / 全体数】: " ++ show correctCount ++ " / " ++ show totalCount
 
+  -- リストを分解して評価用のデータを作る
+  let actualInts = map (\(a,_,_,_,_,_) -> a) allResults
+  let predictedInts = map (\(_,p,_,_,_,_) -> p) allResults
+  let outputText = unlines (map (\(_,_,_,_,_,txt) -> txt) allResults)
+  
+  -- OOVの統計
+  let totalOOV = sum $ map (\(_,_,o,_,_,_) -> o) allResults
+  let totalOOVwords = sum $ map (\(_,_,_,w,_,_) -> w) allResults
+  let totalTestWords = sum $ map (\(_,_,_,_,t,_) -> t) allResults
+  let oovRate = (fromIntegral totalOOV / fromIntegral totalTestWords) * 100 :: Float
+  let oovRatewords = (fromIntegral totalOOVwords / fromIntegral wordLength) * 100 :: Float
+
+  -- Evaluationモジュールを使った計算
   let classes = [1, 2, 3, 4, 5]
-    acc  = accuracy actualInts predictedInts
-    mac  = macroF1 classes actualInts predictedInts
-    wei  = weightedF1 classes actualInts predictedInts
-    cMat = confusionMatrix classes actualInts predictedInts
-    
-  let outputText = unlines (map snd allResults)
-  writeFile outputPath outputText
+  let accRate = Evaluation.accuracy actualInts predictedInts * 100
+  let macF1 = Evaluation.macroF1 classes actualInts predictedInts
+  let weiF1 = Evaluation.weightedF1 classes actualInts predictedInts
+  let cMat = Evaluation.confusionMatrix classes actualInts predictedInts
 
+  -- 結果の出力
+  putStrLn $ "\n===== 評価結果 ====="
+  putStrLn $ "【正解率 (Accuracy)】: " ++ show accRate ++ " %"
+  putStrLn $ "【Macro F1スコア】   : " ++ show macF1
+  putStrLn $ "【Weighted F1スコア】: " ++ show weiF1
+  putStrLn $ "【未知語率】  : " ++ show totalOOV ++ " / " ++ show totalTestWords ++ " (" ++ show oovRate ++ " %)"
+  putStrLn $ "【未知語彙率】  : " ++ show totalOOVwords ++ " / " ++ show wordLength ++ " (" ++ show oovRatewords ++ " %)"
+  
+  putStrLn "\n【Confusion Matrix】"
+  putStrLn "      予測1 予測2 予測3 予測4 予測5"
+  mapM_ (\(r, row) -> putStrLn $ "正解" ++ show r ++ ": " ++ show row) (zip classes cMat)
+
+
+  -- let outputText = unlines (map snd allResults)
+  writeFile outputPath outputText
 
   return ()

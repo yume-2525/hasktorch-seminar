@@ -6,6 +6,7 @@ Session5/data/
 Session5/titanic/
 Session6/data/
 Session7/data/
+Session8/data/
 
 # Dockerの一時ファイル
 .docker-compose/

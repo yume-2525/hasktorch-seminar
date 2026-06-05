@@ -259,6 +259,58 @@ executables:
     - aeson
     - nlp-tools
 
+  session-8-embedding:
+    main:                LoadGlove.hs
+    source-dirs:         Session8
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - cassava         
+    - vector         
+    - bytestring      
+    - foldl           
+    - random-shuffle  
+    - utf8-string
+    - bytestring
+    - containers
+    - aeson
+
+  session-8-parser:
+    main:                Parser.hs
+    source-dirs:         Session8
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - bytestring
+    - aeson
+    - utf8-string
+
+  session-8-review-rnn:
+    main:                reviewRNN.hs
+    source-dirs:         Session8
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - cassava         
+    - vector         
+    - bytestring      
+    - foldl           
+    - random-shuffle  
+    - utf8-string
+    - bytestring
+    - containers
+    - aeson
+    - nlp-tools
+
 tests:
   my-hasktorch-task-test:
     main:                Spec.hs
