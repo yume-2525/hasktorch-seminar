@@ -1,3 +1,5 @@
+# Improvement of the Session7 Task
+
 ## Creation of a New Vocabulary Dictionary
 An attempt was made to improve the self-built embedding, but due to a lack of memory, it was decided to use an existing pre-trained model.
 300-dimensional word vector data was obtained and introduced from the [GloVe](https://nlp.stanford.edu/projects/glove/) website.
