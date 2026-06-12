@@ -66,7 +66,7 @@ Actual 4: [166, 0, 62, 1008, 29]
 Actual 5: [613, 0, 222, 3399, 123]
 ```
 
-#### Exp3: Sentences with 3 words or fewer were excluded from both the training data and test data. In addition, the training data was leveled so that the number of sentences for each score became the same before training.
+#### Exp3: Sentences with 3 words or fewer were excluded from both the training data and test data. In addition, the number of sentences for each score became the same before training.
 ```
 ===== Evaluation Results =====
 [Accuracy]                  : 7.0463076 %
@@ -145,7 +145,7 @@ Actual 5: [28, 608, 3493, 228, 0]
 | **2** | Excluded 3 words or fewer from both training & test | **16.49%** | **0.103** | Predictions biased toward "1, 3, 4". Has the best accuracy. |
 | **3** | Exp2 + Leveling of training data scores | 7.04% | 0.052 | Extremely biased toward predictions of "1, 2" |
 | **4** | Exp2 + OOV rate of 20% or less | 14.62% | 0.080 | Predictions biased toward "4" |
-| **6** | Training & test both OOV rate 0% | 15.28% | 0.056 | Predictions biased toward "4" |
+| **6** | Exp2 + OOV rate of 0% | 15.28% | 0.056 | Predictions biased toward "4" |
 | **8** | Exp2 conditions + Changed to **LSTM model** | 9.03% | 0.064 | Predictions biased toward "3" |
 
 ### 1.2 Discussion and Issues
