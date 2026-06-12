@@ -104,20 +104,20 @@ Actual 5: [46, 392, 161, 3423, 0]
 
 #### Exp6: Sentences with 3 words or fewer were excluded from both the training data and test data. In addition, from the training data and test data, those with an OOV rate of 0% were adopted
 ```
-===== 評価結果 =====
-【正解率 (Accuracy)】: 14.80898 %
-【Macro F1スコア】   : 6.5599576e-2
-【Weighted F1スコア】: 4.6019718e-2
-【未知語率】  : 0 / 29126 (0.0 %)
-【未知語彙率】  : 0 / 10000 (0.0 %)
+===== Evaluation Results =====
+[Accuracy]                  : 14.80898 %
+[Macro F1 Score]            : 6.5599576e-2
+[Weighted F1 Score]         : 4.6019718e-2
+[OOV Rate]                  : 0 / 29126 (0.0 %)
+[OOV Vocabulary Rate]       : 0 / 10000 (0.0 %)
 
-【Confusion Matrix】
-      予測1 予測2 予測3 予測4 予測5
-正解1: [0,0,23,260,0]
-正解2: [0,0,9,75,0]
-正解3: [0,0,12,190,0]
-正解4: [0,0,30,364,0]
-正解5: [0,0,96,1480,0]
+[Confusion Matrix]
+          Predicted1 Predicted2 Predicted3 Predicted4 Predicted5
+Actual 1: [0, 0, 23, 260, 0]
+Actual 2: [0, 0, 9, 75, 0]
+Actual 3: [0, 0, 12, 190, 0]
+Actual 4: [0, 0, 30, 364, 0]
+Actual 5: [0, 0, 96, 1480, 0]
 ```
 
 #### Exp8: Sentences with 3 words or fewer were excluded from both the training data and test data. An LSTM was used.
@@ -138,15 +138,15 @@ Actual 4: [3, 165, 1027, 70, 0]
 Actual 5: [28, 608, 3493, 228, 0]
 ```
 
-| Exp | 条件（前処理・モデル） | Accuracy | Macro F1 | 備考・特徴 |
+| Exp | Conditions (Preprocessing / Model) | Accuracy | Macro F1 | Remarks / Features |
 | :--- | :--- | :--- | :--- | :--- |
-| **0** | 先週の結果 | 13.02% | 0.081 | 予測が「4」に偏る |
-| **1** | 訓練データのみ3語以下除外 | 13.13% | 0.071 | 予測が「2, 4, 5」に偏る |
-| **2** | 訓練＆テスト共に3語以下除外 | **16.49%** | **0.103** | 予測の幅が広がり、本実験の最高精度 |
-| **3** | Exp2 ＋ 訓練データスコア均等化 | 7.04% | 0.052 | 「1, 2」の予測に極端に偏る |
-| **4** | Exp2 ＋ 未知語率20%以下（訓練のみ） | 14.62% | 0.080 | 予測が再び「4, 5」の中央付近に集中 |
-| **6** | 訓練＆テスト共に未知語率0% | 15.28% | 0.056 | データ激減（訓練819件）。分散は小さい |
-| **8** | Exp2の条件 ＋ **LSTMモデル**に変更 | 9.03% | 0.064 | 長期記憶を導入したが予測は4・5に偏る |
+| **0** | Results from last week | 13.02% | 0.081 | Predictions biased toward "4" |
+| **1** | Excluded 3 words or fewer only from training data | 13.13% | 0.071 | Predictions biased toward "2, 3, 4" |
+| **2** | Excluded 3 words or fewer from both training & test | **16.49%** | **0.103** | Predictions biased toward "1, 3, 4". Has the best accuracy. |
+| **3** | Exp2 + Leveling of training data scores | 7.04% | 0.052 | Extremely biased toward predictions of "1, 2" |
+| **4** | Exp2 + OOV rate of 20% or less | 14.62% | 0.080 | Predictions biased toward "4" |
+| **6** | Training & test both OOV rate 0% | 15.28% | 0.056 | Predictions biased toward "4" |
+| **8** | Exp2 conditions + Changed to **LSTM model** | 9.03% | 0.064 | Predictions biased toward "3" |
 
 ### 1.2 Discussion and Issues
 In any case, good results could not be obtained. Running it on this computer, the memory shortage limits the number of iterations to around 100 times, which was considered to be one of the causes. Also, the fact that the amount of data has become considerably small compared to the whole due to extraction is also considered to be one of the causes.
