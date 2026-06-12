@@ -143,7 +143,7 @@ Actual 5: [28, 608, 3493, 228, 0]
 | **0** | Results from last week | 13.02% | 0.081 | Predictions biased toward "4" |
 | **1** | Excluded 3 words or fewer only from training data | 13.13% | 0.071 | Predictions biased toward "2, 3, 4" |
 | **2** | Excluded 3 words or fewer from both training & test | **16.49%** | **0.103** | Predictions biased toward "1, 3, 4". Has the best accuracy. |
-| **3** | Exp2 + Leveling of training data scores | 7.04% | 0.052 | Extremely biased toward predictions of "1, 2" |
+| **3** | Exp2 + adjusted training data | 7.04% | 0.052 | Extremely biased toward predictions of "1, 2" |
 | **4** | Exp2 + OOV rate of 20% or less | 14.62% | 0.080 | Predictions biased toward "4" |
 | **6** | Exp2 + OOV rate of 0% | 15.28% | 0.056 | Predictions biased toward "4" |
 | **8** | Exp2 conditions + Changed to **LSTM model** | 9.03% | 0.064 | Predictions biased toward "3" |
