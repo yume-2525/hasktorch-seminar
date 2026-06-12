@@ -2,7 +2,6 @@
 Based on the previous feedback, several settings were changed to aim for improvement.
 
 ### 1.1 Experimental Conditions and List of Results
-The data preprocessing conditions and the model (RNN/LSTM) were changed, and the trends in Accuracy and F1 score were verified.
 
 This week, the code was rewritten by adding to the conditions of last week.
 Conditions:  
