@@ -20,7 +20,7 @@ import Torch.Tensor (Tensor, select, asValue)
 import Torch.Functional (mul, sumAll)
 import Torch.Device (Device(..), DeviceType(..))
 
--- モデル構造（Embedding層のみ）
+-- モデル構造
 data ModelSpec = ModelSpec {
   wordNum :: Int,
   wordDim :: Int
