@@ -26,6 +26,7 @@ import Torch.Optim (GD(..))
 import Torch.Tensor (Tensor, select, shape, asTensor, asValue)
 import Torch.Functional (stack, Dim(..), mseLoss)
 import Torch.Layer.RNN (RnnHypParams(..), RnnParams(..), rnnLayers)
+import Torch.Layer.LSTM (LstmHypParams(..), LstmParams(..), lstmLayers)
 import Torch.Layer.MLP (MLPHypParams(..), MLPParams, ActName(..), mlpLayer)
 import Torch.Device (Device(..), DeviceType(..))
 import ML.Exp.Chart (drawLearningCurve)
@@ -70,7 +71,8 @@ data Embedding = Embedding {
 data Model = Model {
   emb :: Embedding,
   -- TODO: add RNN
-  rnn :: RnnParams,  -- RNN
+  -- rnn :: RnnParams,  -- RNN
+  lstm :: LstmParams,
   mlp :: MLPParams   -- RNNの出力をスコア(1つの数字)に変換する層
 } deriving (Generic, Parameterized)  -- Showを外した
 
@@ -83,20 +85,21 @@ instance
     sample ModelSpec {..} = do
         randEmb <- Embedding <$> (makeIndependent =<< randnIO' [wordNum, wordDim])  -- ランダムな値のembeddingを作る
         -- TODO: add RNN initilization
-        let rnnSpec = RnnHypParams {
+        let lstmSpec = LstmHypParams {
             dev = Device CPU 0,
             bidirectional = False,  -- True if BiLSTM, False otherwise
             inputSize = wordDim,  -- The number of expected features in the input x
             hiddenSize = 256, -- The number of features in the hidden state h
             numLayers = 1,  -- Number of recurrent layers
-            hasBias = True   -- If False, then the layer does not use bias weights b_ih and b_hh.
+            hasBias = True,   -- If False, then the layer does not use bias weights b_ih and b_hh.
+            projSize = Nothing
             }
-        randRNN <- sample rnnSpec
+        randLSTM <- sample lstmSpec
 
         let mlpSpec = MLPHypParams (Device CPU 0) 256 [(1, Id)]
         randMLP <- sample mlpSpec
 
-        return $ Model randEmb randRNN randMLP
+        return $ Model randEmb randLSTM randMLP
 
 -- randomize and initialize embedding with loaded params
 initialize ::
@@ -160,12 +163,15 @@ forward Model{..} wordIds =
       -- 前から順にRNNに渡す
 
       h0 = zeros' [1, 256]  -- 最初の単語を読む前の「初期の記憶(h0)」として、ゼロで埋まったベクトルを用意する　[記憶レイヤー数, 単語ベクトル次元数]
+      c0 = zeros' [1, 256]
       
       -- RNNに処理させる
-      (allOutputs, finalOutput) = rnnLayers rnn Tanh Nothing h0 inputs  -- rnnLayers 引数: (RNNの重み) (活性化関数) (ドロップアウト) (初期値) (入力データ) 戻り値: (すべてのステップの出力, 最後の記憶)
+      -- (allOutputs, finalOutput) = rnnLayers rnn Tanh Nothing h0 inputs  -- rnnLayers 引数: (RNNの重み) (活性化関数) (ドロップアウト) (初期値) (入力データ) 戻り値: (すべてのステップの出力, 最後の記憶)
+      (allOutputs, (finalH, finalC)) = lstmLayers lstm Nothing (h0, c0) inputs
 
       -- 最終的な値をMLPに渡してスコアを出す
-      score = mlpLayer mlp (select 0 0 finalOutput)   -- RNNが最後まで読んで出した「最後の出力(finalOutput)」をMLPに通す
+      -- score = mlpLayer mlp (select 0 0 finalOutput)   -- RNNが最後まで読んで出した「最後の出力(finalOutput)」をMLPに通す
+      score = mlpLayer mlp (select 0 0 finalH)
     in   score
 
 -- your amazon review json
@@ -179,13 +185,13 @@ amazonReviewPathTest :: FilePath
 amazonReviewPathTest = "Session8/data/test.jsonl"
 
 outputPath :: FilePath
-outputPath = "Session8/data/review-texts-emb-2.txt"
+outputPath = "Session9/data/review-texts-emb-8.txt"
 
 embeddingPath =  "Session8/data/glove_emb.params"
 
 wordLstPath = "Session8/data/glove_wordlst.txt"
 
-grahpPath = "Session8/result_graph/reviewRNN-emb-2.png"
+grahpPath = "Session9/result_graph/reviewRNN-emb-8.png"
 
 -- jsonをHaskellで使えるように
 decodeToAmazonReview ::
@@ -241,12 +247,33 @@ main = do
   putStrLn "モデル初期化OK"
 
   let wordToIndex = wordToIndexFactory wordlst
-  let dataset = map (\rev -> 
+  let dataset' = map (\rev -> 
           let processed = concat $ preprocess (text rev)
               wIds = map wordToIndex processed
               target = rating rev
           in (wIds, target)
         ) reviews
+  let dataset = filter (\(wIds, _target) -> length wIds > 3) dataset'  -- 三単語以下の文章を切り捨て
+  -- let dataset = filter (\(wIds, _target) -> 
+  --         -- 未知語の数（wordlstの長さと同じIDになっているもの）を数える
+  --         let oovCount = length $ filter (== length wordlst) wIds
+  --             totalWords = length wIds
+  --             -- 割り算をして未知語率を出す (0.0 〜 1.0)
+  --             oovRate = fromIntegral oovCount / fromIntegral totalWords :: Float
+  --         in oovRate <= 0.2  -- ★未知語率が20%以下のデータだけをTrueとして残す
+  --       ) dataset_long
+  -- putStrLn $ "学習データ" ++ show (length dataset)
+  -- let dStar1 = filter (\(_, t) -> t == 1.0) dataset_long
+  -- let dStar2 = filter (\(_, t) -> t == 2.0) dataset_long
+  -- let dStar3 = filter (\(_, t) -> t == 3.0) dataset_long
+  -- let dStar4 = filter (\(_, t) -> t == 4.0) dataset_long
+  -- let dStar5 = filter (\(_, t) -> t == 5.0) dataset_long
+  -- let minCount = minimum [length dStar1, length dStar2, length dStar3, length dStar4, length dStar5]
+  -- let dataset = take minCount dStar1 ++ 
+  --               take minCount dStar2 ++ 
+  --               take minCount dStar3 ++ 
+  --               take minCount dStar4 ++ 
+  --               take minCount dStar5
   let validset = map (\rev -> 
           let processed = concat $ preprocess (text rev)
               wIds = map wordToIndex processed
@@ -278,8 +305,24 @@ main = do
       u <- update model opt meanTrainLoss learningRate
       return (u, lossValidValue)
 
-  drawLearningCurve grahpPath "Learning Curve" [("Validation Loss",reverse losses)]
-  
+  putStrLn "学習完了"
+
+  -- drawLearningCurve grahpPath "Learning Curve" [("Validation Loss",reverse losses)]
+
+  -- putStrLn "グラフ描画完了"
+  let longReviewsTest = filter (\rev -> length (words (text rev)) > 3) reviewsTest
+  -- let filteredReviewsTest = filter (\rev -> 
+  --         let processed = concat $ preprocess (text rev)
+  --             wIds = map wordToIndex processed
+  --             -- 未知語の数と全体の単語数を数える
+  --             oovCount = length $ filter (== length wordlst) wIds
+  --             totalWords = length wIds 
+  --             -- 割り算をして未知語率を出す (ゼロ割りを防ぐ)
+  --             oovRate = if totalWords == 0 
+  --                       then 0.0 
+  --                       else fromIntegral oovCount / fromIntegral totalWords :: Float
+  --         in oovRate <= 0.2  -- 未知語率が_%以下のデータだけをTrueとして残す
+  --       ) longReviewsTest
   let allResults = map (\rev -> 
           let processed = concat $ preprocess (text rev)
               wIds = map wordToIndex processed
@@ -297,7 +340,7 @@ main = do
               isCorrect = predictedInt == actualInt
               resultText ="【正解】: " ++ show actualInt ++ " | 【予測】: " ++ show predictedInt ++ " (" ++ show predicted ++ ") | OOV: " ++ show oovCount ++ "/" ++ show totalWords ++ " | 【本文】: " ++ text rev
           in (actualInt, predictedInt, oovCount, oovCountUni, totalWords, resultText)
-        ) reviewsTest
+        ) longReviewsTest
 
   -- リストを分解して評価用のデータを作る
   let actualInts = map (\(a,_,_,_,_,_) -> a) allResults

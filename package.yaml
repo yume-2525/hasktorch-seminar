@@ -311,6 +311,20 @@ executables:
     - aeson
     - nlp-tools
 
+  session-9-word-similarity:
+    main:                wordSim.hs
+    source-dirs:         Session9
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - my-hasktorch-task
+    - hasktorch
+    - utf8-string
+    - bytestring 
+    - containers
+
 tests:
   my-hasktorch-task-test:
     main:                Spec.hs

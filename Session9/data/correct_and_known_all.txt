@@ -1,0 +1,552 @@
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: OK
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4481564) | OOV: 0/14 | 【本文】: Not really a video but just a bunch of poses that are taught separately.
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4498773) | OOV: 0/1 | 【本文】: Fair
+【正解】: 3 | 【予測】: 3 (3.4498773) | OOV: 0/1 | 【本文】: FAIR
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: OK
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4685063) | OOV: 0/1 | 【本文】: Average
+【正解】: 3 | 【予測】: 3 (3.450293) | OOV: 0/1 | 【本文】: Challenges
+【正解】: 3 | 【予測】: 3 (3.4931073) | OOV: 0/3 | 【本文】: It is alright
+【正解】: 3 | 【予測】: 3 (3.3408713) | OOV: 0/13 | 【本文】: I love these kinds of games but it to hard to get diamonds
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: OK
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: OK
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.0750234) | OOV: 0/1 | 【本文】: k
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4664044) | OOV: 0/25 | 【本文】: I really liked it until I figured out that no matter how good u get; there is no other levels but one. now that suck
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: ok
+【正解】: 3 | 【予測】: 3 (2.9159164) | OOV: 0/1 | 【本文】: eh
+【正解】: 3 | 【予測】: 3 (3.490194) | OOV: 0/5 | 【本文】: its an app who cares?
+【正解】: 3 | 【予測】: 3 (3.490194) | OOV: 0/5 | 【本文】: its an app who cares?
+【正解】: 3 | 【予測】: 3 (3.490194) | OOV: 0/5 | 【本文】: its an app who cares?
+【正解】: 3 | 【予測】: 3 (3.4841938) | OOV: 0/1 | 【本文】: None
+【正解】: 3 | 【予測】: 3 (3.4841938) | OOV: 0/1 | 【本文】: None
+【正解】: 3 | 【予測】: 3 (3.447195) | OOV: 0/15 | 【本文】: Did not appeal to me. Puzzles were annoying and was too many. Story was dull.
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.157254) | OOV: 0/1 | 【本文】: Ya
+【正解】: 3 | 【予測】: 3 (3.163955) | OOV: 0/16 | 【本文】: Too rich for my blood. Especially when I can get the game free with an antenna
+【正解】: 3 | 【予測】: 3 (3.4166121) | OOV: 0/3 | 【本文】: Some fun tones.
+【正解】: 3 | 【予測】: 3 (3.4498773) | OOV: 0/1 | 【本文】: fair
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4759493) | OOV: 0/1 | 【本文】: Ok
+【正解】: 3 | 【予測】: 3 (3.4112644) | OOV: 0/9 | 【本文】: Keep up on the good work Thank U Spotify
+【正解】: 4 | 【予測】: 4 (3.5654972) | OOV: 0/14 | 【本文】: Simply easy and accurate, just what I need at the tip of my fingers!
+【正解】: 4 | 【予測】: 4 (4.0843325) | OOV: 0/3 | 【本文】: Relaxing and fun
+【正解】: 4 | 【予測】: 4 (3.6982965) | OOV: 0/11 | 【本文】: Very challenging game for young and older adults! Enjoy using brain.
+【正解】: 4 | 【予測】: 4 (4.1442385) | OOV: 0/2 | 【本文】: Enjoyable game!
+【正解】: 4 | 【予測】: 4 (4.0794573) | OOV: 0/5 | 【本文】: I like it works good
+【正解】: 4 | 【予測】: 4 (3.5742242) | OOV: 0/1 | 【本文】: useful.
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: good.
+【正解】: 4 | 【予測】: 4 (3.7418084) | OOV: 0/3 | 【本文】: used and worked.
+【正解】: 4 | 【予測】: 4 (3.786255) | OOV: 0/2 | 【本文】: Good Product!
+【正解】: 4 | 【予測】: 4 (3.6440995) | OOV: 0/1 | 【本文】: Happy
+【正解】: 4 | 【予測】: 4 (3.5030553) | OOV: 0/8 | 【本文】: It works great on a Kindle Fire tablet.
+【正解】: 4 | 【予測】: 4 (3.9022915) | OOV: 0/5 | 【本文】: Wish it was multi player
+【正解】: 4 | 【予測】: 4 (3.9022288) | OOV: 0/7 | 【本文】: Had some connection issues and voice issues
+【正解】: 4 | 【予測】: 4 (3.638715) | OOV: 0/7 | 【本文】: Fun to play, good bonus spin reward.
+【正解】: 4 | 【予測】: 4 (3.8955607) | OOV: 0/6 | 【本文】: Gets the job done every year.
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (3.7358248) | OOV: 0/1 | 【本文】: Great
+【正解】: 4 | 【予測】: 4 (3.8672643) | OOV: 0/22 | 【本文】: This one seems to allow more play time by making the rewards easier. I like better than the other one I tried!
+【正解】: 4 | 【予測】: 4 (3.9883754) | OOV: 0/26 | 【本文】: Like this game so far. I wish the pictures were a little bigger though. But it gives us a chance to play and help each other.
+【正解】: 4 | 【予測】: 4 (4.178878) | OOV: 0/4 | 【本文】: Challenging and fun game
+【正解】: 4 | 【予測】: 4 (4.097031) | OOV: 0/25 | 【本文】: This is a fun app for children. If you have small children I would recommend this app for them. My 7 year old loves it!
+【正解】: 4 | 【予測】: 4 (3.5508535) | OOV: 0/1 | 【本文】: Thanks
+【正解】: 4 | 【予測】: 4 (4.0826044) | OOV: 0/3 | 【本文】: Lots of fun!
+【正解】: 4 | 【予測】: 4 (4.048982) | OOV: 0/5 | 【本文】: It was easy to play.
+【正解】: 4 | 【予測】: 4 (3.86077) | OOV: 0/29 | 【本文】: Pretty good game, definitely something to waste some time with. Gets kind of dull after a while. But all in all, a pretty good deal for a free app.
+【正解】: 4 | 【予測】: 4 (3.7178187) | OOV: 0/25 | 【本文】: This is one of a few match 3 game that keeps me interested. It is the only match 3 that I have on my Fire.
+【正解】: 4 | 【予測】: 4 (4.1481924) | OOV: 0/5 | 【本文】: Good, short little escape game.
+【正解】: 4 | 【予測】: 4 (3.934369) | OOV: 0/20 | 【本文】: This is my new favorite game!! Lots of challenges and lots of levels. Not the same thing over and over.
+【正解】: 4 | 【予測】: 4 (4.0939956) | OOV: 0/13 | 【本文】: Too many pop up and pay to play ads but overall, pretty good
+【正解】: 4 | 【予測】: 4 (4.094551) | OOV: 0/9 | 【本文】: It tricks our brain and it is very fun.
+【正解】: 4 | 【予測】: 4 (3.9314735) | OOV: 0/33 | 【本文】: This game was a little hard to see the tiles and to determine where to click or which ones I should choose. It only was played a few times and never touched again.
+【正解】: 4 | 【予測】: 4 (3.9379644) | OOV: 0/12 | 【本文】: I love this game so much I just wish they were free
+【正解】: 4 | 【予測】: 4 (4.1111507) | OOV: 0/17 | 【本文】: This is a great game if you want to be challenge and you have fun with it
+【正解】: 4 | 【予測】: 4 (3.7358248) | OOV: 0/1 | 【本文】: Great
+【正解】: 4 | 【予測】: 4 (4.177726) | OOV: 0/7 | 【本文】: When bored something to play good game
+【正解】: 4 | 【予測】: 4 (4.0813217) | OOV: 0/5 | 【本文】: Fit and design were good.
+【正解】: 4 | 【予測】: 4 (3.7833726) | OOV: 0/4 | 【本文】: Very good it wondering
+【正解】: 4 | 【予測】: 4 (3.517976) | OOV: 0/3 | 【本文】: Better than cable
+【正解】: 4 | 【予測】: 4 (3.876461) | OOV: 0/59 | 【本文】: This is a very good game in my opinion, however I think that the devs should allow support for ps4 users because when I may my controller it does not work correctly and I just start spinning around in circles. Otherwise you should totally get it. A lot of hard work has been put into this game I believe.
+【正解】: 4 | 【予測】: 4 (3.9132297) | OOV: 0/13 | 【本文】: A really fun app for playing with the photos you have laying around
+【正解】: 4 | 【予測】: 4 (3.8238235) | OOV: 0/5 | 【本文】: Works better than the website.
+【正解】: 4 | 【予測】: 4 (3.9469018) | OOV: 0/19 | 【本文】: I liked the game, it was a lot of fun. The game is large enough to last a while.
+【正解】: 4 | 【予測】: 4 (3.9864142) | OOV: 0/2 | 【本文】: Not bad...
+【正解】: 4 | 【予測】: 4 (3.9307768) | OOV: 0/6 | 【本文】: Needs more levels for single player
+【正解】: 4 | 【予測】: 4 (3.845637) | OOV: 0/11 | 【本文】: Wish there were more sports but otherwise a great streaming option
+【正解】: 4 | 【予測】: 4 (4.15602) | OOV: 0/2 | 【本文】: Great game
+【正解】: 4 | 【予測】: 4 (4.098873) | OOV: 0/2 | 【本文】: Love it!
+【正解】: 4 | 【予測】: 4 (3.9467514) | OOV: 0/3 | 【本文】: Needs more content
+【正解】: 4 | 【予測】: 4 (3.8853996) | OOV: 0/6 | 【本文】: Nice app for home improvement ideas!
+【正解】: 4 | 【予測】: 4 (3.797133) | OOV: 0/30 | 【本文】: This is a great time killer. Easy to use, looks good and plays well. I can play this any time and stop when needed. Then come back and continue later.
+【正解】: 4 | 【予測】: 4 (3.9151554) | OOV: 0/5 | 【本文】: Needed for all Office needs
+【正解】: 4 | 【予測】: 4 (3.8073556) | OOV: 0/7 | 【本文】: a must have for all Apple users
+【正解】: 4 | 【予測】: 4 (3.6326704) | OOV: 0/3 | 【本文】: Too many advertising
+【正解】: 4 | 【予測】: 4 (4.090577) | OOV: 0/10 | 【本文】: This is a fun game. I recommend you download it.
+【正解】: 4 | 【予測】: 4 (4.010468) | OOV: 0/14 | 【本文】: After I figured out what kind of files it works with, it worked great.
+【正解】: 4 | 【予測】: 4 (3.6713352) | OOV: 0/3 | 【本文】: Brings back memories.
+【正解】: 4 | 【予測】: 4 (3.551127) | OOV: 0/16 | 【本文】: A really nice game gets pretty challenging in steps ,fun to play, except for annoying adds!
+【正解】: 4 | 【予測】: 4 (3.9602678) | OOV: 0/7 | 【本文】: Not really what I was looking for.
+【正解】: 4 | 【予測】: 4 (3.9602675) | OOV: 0/6 | 【本文】: Not what I was looking for
+【正解】: 4 | 【予測】: 4 (3.9602675) | OOV: 0/6 | 【本文】: Not what I was looking for
+【正解】: 4 | 【予測】: 4 (3.7817137) | OOV: 0/26 | 【本文】: Wish their mobile radar map was as good as the one they have for the I-Phone. The app also contains news and lots of local data
+【正解】: 4 | 【予測】: 4 (3.685999) | OOV: 0/7 | 【本文】: easily became part of my Amazon Fire.
+【正解】: 4 | 【予測】: 4 (3.8647854) | OOV: 0/5 | 【本文】: Trying to catch my friend.
+【正解】: 4 | 【予測】: 4 (4.084694) | OOV: 0/2 | 【本文】: Enjoyed it
+【正解】: 4 | 【予測】: 4 (3.528135) | OOV: 0/16 | 【本文】: Fun little game, that goes quickly and help pass time as you wait for an appointment.
+【正解】: 4 | 【予測】: 4 (4.0609026) | OOV: 0/5 | 【本文】: use from time to time
+【正解】: 4 | 【予測】: 4 (3.950842) | OOV: 0/10 | 【本文】: have not used much. but works pretty good so far.
+【正解】: 4 | 【予測】: 4 (3.9964514) | OOV: 0/4 | 【本文】: Play this game often.
+【正解】: 4 | 【予測】: 4 (4.1549826) | OOV: 0/4 | 【本文】: Fun and challenging game
+【正解】: 4 | 【予測】: 4 (3.9506814) | OOV: 0/4 | 【本文】: Works good so far.
+【正解】: 4 | 【予測】: 4 (3.767178) | OOV: 0/10 | 【本文】: Nice app to have. Only draw back is limited features.
+【正解】: 4 | 【予測】: 4 (3.8683093) | OOV: 0/4 | 【本文】: Enjoy reading this daily.
+【正解】: 4 | 【予測】: 4 (3.664071) | OOV: 0/6 | 【本文】: Good addition to my Kindle Fire.
+【正解】: 4 | 【予測】: 4 (4.098221) | OOV: 0/4 | 【本文】: So far so good
+【正解】: 4 | 【予測】: 4 (4.1675754) | OOV: 0/21 | 【本文】: This has been a fun game that was free and I can resist the purchases and still enjoy playing the game
+【正解】: 4 | 【予測】: 4 (3.7116117) | OOV: 0/11 | 【本文】: Lots of fun. Not too hard, just enough to stay challenging.
+【正解】: 4 | 【予測】: 4 (4.0490775) | OOV: 0/5 | 【本文】: Fun game! Easy to play.
+【正解】: 4 | 【予測】: 4 (3.7694104) | OOV: 0/6 | 【本文】: Nice at at a good price.
+【正解】: 4 | 【予測】: 4 (3.9878478) | OOV: 0/7 | 【本文】: Good game but the levels are hard.
+【正解】: 4 | 【予測】: 4 (4.1775155) | OOV: 0/22 | 【本文】: It is a fun game and my mom allows me to play it all day. So I say its a good game
+【正解】: 4 | 【予測】: 4 (4.1762886) | OOV: 0/21 | 【本文】: awesome app but it needs facebook for a lot of the things. I play it all the time. Wow good game!
+【正解】: 4 | 【予測】: 4 (4.139597) | OOV: 0/2 | 【本文】: basic game
+【正解】: 4 | 【予測】: 4 (4.0302234) | OOV: 0/61 | 【本文】: I wanted a change and to have some new pictures and ideas for some projects so I ordered the Print Shop. I have always liked Print Shop and I still do but do not find it as easy to use as the older version. But, with practice maybe I will figure it out. It is a good buy for the money.
+【正解】: 4 | 【予測】: 4 (3.6916432) | OOV: 0/11 | 【本文】: Toy Blast is a great game to keep your mind active.
+【正解】: 4 | 【予測】: 4 (4.116271) | OOV: 0/10 | 【本文】: Apparently need to go buy a hand controller for games?
+【正解】: 4 | 【予測】: 4 (4.0549) | OOV: 0/6 | 【本文】: It helps me pass the time.
+【正解】: 4 | 【予測】: 4 (3.9431815) | OOV: 0/3 | 【本文】: Easy to use.
+【正解】: 4 | 【予測】: 4 (3.8915482) | OOV: 0/2 | 【本文】: A must
+【正解】: 4 | 【予測】: 4 (3.6997068) | OOV: 0/5 | 【本文】: A must for sports fan
+【正解】: 4 | 【予測】: 4 (3.9602675) | OOV: 0/7 | 【本文】: I found what I was looking for.
+【正解】: 4 | 【予測】: 4 (3.5818245) | OOV: 0/46 | 【本文】: Google calendar has its advantages in that like other Google products it follows you from device to device. But, also like other Google products, it could be a lot more robust. It is a bit simple and I would like something a bit more full featured.
+【正解】: 4 | 【予測】: 4 (3.612879) | OOV: 0/1 | 【本文】: Cool
+【正解】: 4 | 【予測】: 4 (4.065913) | OOV: 0/4 | 【本文】: Fun game as always
+【正解】: 4 | 【予測】: 4 (3.827564) | OOV: 0/3 | 【本文】: Works fine. Thanks.
+【正解】: 4 | 【予測】: 4 (3.8222506) | OOV: 0/2 | 【本文】: No thanks
+【正解】: 4 | 【予測】: 4 (3.8222506) | OOV: 0/2 | 【本文】: No thanks
+【正解】: 4 | 【予測】: 4 (3.9674335) | OOV: 0/27 | 【本文】: Nice app. On the Kindle Fire I have some issues with being able to delete posts from my wall. A nice, handy on the go app though.
+【正解】: 4 | 【予測】: 4 (4.0249605) | OOV: 0/22 | 【本文】: Does a good job. Used to complete my own tax returns but schedule D was too complicated. Was a breeze with this.
+【正解】: 4 | 【予測】: 4 (3.5756342) | OOV: 0/21 | 【本文】: Enjoy this one very much ...You can get really into this fast paced game but be ready to crash and burn
+【正解】: 4 | 【予測】: 4 (3.9497879) | OOV: 0/6 | 【本文】: Works fine. No problems so far.
+【正解】: 4 | 【予測】: 4 (4.0554395) | OOV: 0/5 | 【本文】: works most of the time
+【正解】: 4 | 【予測】: 4 (4.1018705) | OOV: 0/20 | 【本文】: Love the games here. I play all day and it has become one of my favorite slot games. Enjoying it!!!
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (3.7591941) | OOV: 0/11 | 【本文】: Could be a little more user friendly. Good for the price.
+【正解】: 4 | 【予測】: 4 (3.7973754) | OOV: 0/16 | 【本文】: Great cooking game. Challenging and keep you on your toes. Not to play while hungry (lol).
+【正解】: 4 | 【予測】: 4 (3.5052495) | OOV: 0/34 | 【本文】: Both Happy Chef 1 and Happy Chef 2 are great games. The foods are delicious to make and look at. The different level to pass and the food gets better each level you tackle.
+【正解】: 4 | 【予測】: 4 (3.8526688) | OOV: 0/4 | 【本文】: Not enough newer movies
+【正解】: 4 | 【予測】: 4 (3.9305272) | OOV: 0/3 | 【本文】: Happy happy happy
+【正解】: 4 | 【予測】: 4 (3.8973963) | OOV: 0/12 | 【本文】: it is a cute game and will keep you occupied for hours
+【正解】: 4 | 【予測】: 4 (3.95115) | OOV: 0/6 | 【本文】: I enjoy this game so far.
+【正解】: 4 | 【予測】: 4 (3.8092732) | OOV: 0/5 | 【本文】: It is challenging but enjoyable.
+【正解】: 4 | 【予測】: 4 (3.855305) | OOV: 0/3 | 【本文】: EAsy and fast
+【正解】: 4 | 【予測】: 4 (3.5751889) | OOV: 0/6 | 【本文】: Love the graphics and the wins.
+【正解】: 4 | 【予測】: 4 (3.792254) | OOV: 0/9 | 【本文】: Just that. The coins s you have to buy.
+【正解】: 4 | 【予測】: 4 (3.708735) | OOV: 0/15 | 【本文】: I really love this game, but wish the coin packs were bigger and more affordable.
+【正解】: 4 | 【予測】: 4 (4.174313) | OOV: 0/4 | 【本文】: I like this game.
+【正解】: 4 | 【予測】: 4 (3.876628) | OOV: 0/21 | 【本文】: This is such a great way to pass away the time. I love the aspect of being able to upgrade items.
+【正解】: 4 | 【予測】: 4 (4.1175604) | OOV: 0/23 | 【本文】: This is by far one of the most fun and entertaining games that I have played in a long time! I love it!
+【正解】: 4 | 【予測】: 4 (3.978034) | OOV: 0/6 | 【本文】: Did we just become best friends
+【正解】: 4 | 【予測】: 4 (3.8743901) | OOV: 0/3 | 【本文】: Love new movies
+【正解】: 4 | 【予測】: 4 (3.7412925) | OOV: 0/8 | 【本文】: A fun game to play with different challenges
+【正解】: 4 | 【予測】: 4 (3.7412925) | OOV: 0/8 | 【本文】: A fun game to play with different challenges
+【正解】: 4 | 【予測】: 4 (3.8727999) | OOV: 0/6 | 【本文】: I like the video and music
+【正解】: 4 | 【予測】: 4 (3.7063575) | OOV: 0/23 | 【本文】: Great Game to get lost in. I was disappointed that it was extremely short with no indication of future levels to be added.
+【正解】: 4 | 【予測】: 4 (3.57884) | OOV: 0/1 | 【本文】: Helpful
+【正解】: 4 | 【予測】: 4 (3.5142744) | OOV: 0/1 | 【本文】: Enjoyable
+【正解】: 4 | 【予測】: 4 (3.5142744) | OOV: 0/1 | 【本文】: Enjoyable
+【正解】: 4 | 【予測】: 4 (3.9433084) | OOV: 0/14 | 【本文】: I really enjoy viewing my friends and family while we talk, makes me happy.
+【正解】: 4 | 【予測】: 4 (3.7599792) | OOV: 0/13 | 【本文】: I love the adorable veggies and fruit. Their sound effects are too cute.
+【正解】: 4 | 【予測】: 4 (4.0406456) | OOV: 0/7 | 【本文】: This game is a fun pass time.
+【正解】: 4 | 【予測】: 4 (3.5030365) | OOV: 0/8 | 【本文】: It works great in the Kindle Fire tablet
+【正解】: 4 | 【予測】: 4 (4.0493546) | OOV: 0/4 | 【本文】: Real fun to play
+【正解】: 4 | 【予測】: 4 (4.068701) | OOV: 0/6 | 【本文】: Lots of fun! Candy crushing it!
+【正解】: 4 | 【予測】: 4 (3.9787931) | OOV: 0/33 | 【本文】: I received the CD exactly when they said I would. I had an issue with the serial number and would have appreciated better customer support, but overall it was an ok buying experience.
+【正解】: 4 | 【予測】: 4 (3.7065907) | OOV: 0/2 | 【本文】: Fun, challenging.
+【正解】: 4 | 【予測】: 4 (4.098873) | OOV: 0/2 | 【本文】: Love it
+【正解】: 4 | 【予測】: 4 (3.6992486) | OOV: 0/15 | 【本文】: The best app you can get the reading is the best library on your pc.
+【正解】: 4 | 【予測】: 4 (3.54367) | OOV: 0/27 | 【本文】: Some puzzles are easy, just to get you in the swing of things. They become more challenging as you progress. I wish they had more free puzzles.
+【正解】: 4 | 【予測】: 4 (4.146616) | OOV: 0/2 | 【本文】: awesome game
+【正解】: 4 | 【予測】: 4 (3.9323242) | OOV: 0/23 | 【本文】: The only thing I wish it had was kings in a corner. None of the games seem too. This game is funny far.
+【正解】: 4 | 【予測】: 4 (4.146616) | OOV: 0/2 | 【本文】: awesome game
+【正解】: 4 | 【予測】: 4 (3.9323242) | OOV: 0/23 | 【本文】: The only thing I wish it had was kings in a corner. None of the games seem too. This game is funny far.
+【正解】: 4 | 【予測】: 4 (4.0683455) | OOV: 0/9 | 【本文】: Game is pretty fun. It can get challenging too
+【正解】: 4 | 【予測】: 4 (3.9607275) | OOV: 0/5 | 【本文】: Found it did the job
+【正解】: 4 | 【予測】: 4 (4.0482616) | OOV: 0/3 | 【本文】: Fun to play
+【正解】: 4 | 【予測】: 4 (3.736972) | OOV: 0/4 | 【本文】: Perfect accept PLEASE UPDATE!!!!!
+【正解】: 4 | 【予測】: 4 (4.1521416) | OOV: 0/2 | 【本文】: Thank you!
+【正解】: 4 | 【予測】: 4 (3.9708836) | OOV: 0/20 | 【本文】: It is often difficult to find good games for children. This one is so cute and does a good job.
+【正解】: 4 | 【予測】: 4 (3.9854772) | OOV: 0/13 | 【本文】: Not so hard that you give up. Good mix of easy and hard
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: good
+【正解】: 4 | 【予測】: 4 (3.925047) | OOV: 0/22 | 【本文】: This was a great app for following the action of March madness. I could get live feeds and updates whenever I wanted.
+【正解】: 4 | 【予測】: 4 (4.0548573) | OOV: 0/6 | 【本文】: Fun way to pass the time.
+【正解】: 4 | 【予測】: 4 (4.0596485) | OOV: 0/3 | 【本文】: makes you think
+【正解】: 4 | 【予測】: 4 (4.1614366) | OOV: 0/2 | 【本文】: fun game
+【正解】: 4 | 【予測】: 4 (4.0804243) | OOV: 0/21 | 【本文】: Good product but not for business cards. Not sure if the upgrade has the ability to produce business cards. Otherwise good.
+【正解】: 4 | 【予測】: 4 (3.8996222) | OOV: 0/22 | 【本文】: Game is not the best or worst game I have ever played. The company could do better with fixing the connection issues.
+【正解】: 4 | 【予測】: 4 (3.9826853) | OOV: 0/24 | 【本文】: easy interface. works great with the fire. limited ads which do not interfere with the app itself. works great on the android as well.
+【正解】: 4 | 【予測】: 4 (4.08875) | OOV: 0/20 | 【本文】: like this game alot, it is another one of those. keep me busy type games, so thank you very much!
+【正解】: 4 | 【予測】: 4 (3.6752243) | OOV: 0/1 | 【本文】: Nice
+【正解】: 4 | 【予測】: 4 (3.7563732) | OOV: 0/19 | 【本文】: This is a great little app to have to keep track of your appointments, medical history, and lab results.
+【正解】: 4 | 【予測】: 4 (4.1634164) | OOV: 0/3 | 【本文】: New favorite game.
+【正解】: 4 | 【予測】: 4 (4.1190424) | OOV: 0/22 | 【本文】: In my opinion I think this game is better than how many people have it is better than lots of other games
+【正解】: 4 | 【予測】: 4 (3.522793) | OOV: 0/5 | 【本文】: Enjoy most of the rounds!
+【正解】: 4 | 【予測】: 4 (3.7826192) | OOV: 0/2 | 【本文】: Great product!
+【正解】: 4 | 【予測】: 4 (4.085376) | OOV: 0/3 | 【本文】: Different and fun
+【正解】: 4 | 【予測】: 4 (4.0133514) | OOV: 0/6 | 【本文】: Use it every year, works great!!
+【正解】: 4 | 【予測】: 4 (4.005928) | OOV: 0/7 | 【本文】: One of the better of its kind
+【正解】: 4 | 【予測】: 4 (3.8763626) | OOV: 0/12 | 【本文】: this is a fun game and the challenge increases with each level.
+【正解】: 4 | 【予測】: 4 (4.1064115) | OOV: 0/12 | 【本文】: This is a fun game once you get the hang of it.
+【正解】: 4 | 【予測】: 4 (4.054859) | OOV: 0/9 | 【本文】: This is a fun game to pass the time.
+【正解】: 4 | 【予測】: 4 (4.097251) | OOV: 0/4 | 【本文】: Kinda hard but fun
+【正解】: 4 | 【予測】: 4 (3.977402) | OOV: 0/3 | 【本文】: It works well
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (4.0482616) | OOV: 0/3 | 【本文】: Fun to play
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: fun
+【正解】: 4 | 【予測】: 4 (3.7408354) | OOV: 0/26 | 【本文】: My kids love this game and it keeps them busy trying to figure out how to put the thing together to get to the finish line.
+【正解】: 4 | 【予測】: 4 (4.060671) | OOV: 0/42 | 【本文】: I am fairly new to the use of apps but this one is seems great for my kindle fire. It gives you current temp and conditions. With a simple click you get an updated forecast for the week. This I will keep.
+【正解】: 4 | 【予測】: 4 (3.7591996) | OOV: 0/3 | 【本文】: it is ok
+【正解】: 4 | 【予測】: 4 (3.8075366) | OOV: 0/4 | 【本文】: Fun game but expensive
+【正解】: 4 | 【予測】: 4 (3.8543513) | OOV: 0/2 | 【本文】: Good app
+【正解】: 4 | 【予測】: 4 (3.8543513) | OOV: 0/2 | 【本文】: Good app
+【正解】: 4 | 【予測】: 4 (3.630096) | OOV: 0/6 | 【本文】: Great but to many repeated articles
+【正解】: 4 | 【予測】: 4 (3.516464) | OOV: 0/2 | 【本文】: Time killer
+【正解】: 4 | 【予測】: 4 (3.8969393) | OOV: 0/7 | 【本文】: Calls were good but could be longer
+【正解】: 4 | 【予測】: 4 (4.1148543) | OOV: 0/5 | 【本文】: My 2 sons play it!
+【正解】: 4 | 【予測】: 4 (4.0977116) | OOV: 0/4 | 【本文】: My kids loves it
+【正解】: 4 | 【予測】: 4 (3.776059) | OOV: 0/7 | 【本文】: Fun game! It has kept me busy
+【正解】: 4 | 【予測】: 4 (4.0168734) | OOV: 0/5 | 【本文】: I love games like these.
+【正解】: 4 | 【予測】: 4 (3.7478304) | OOV: 0/22 | 【本文】: So far this is a fairly enjoyable game. I have not had any issues yet, if any come up I will update.
+【正解】: 4 | 【予測】: 4 (3.8542156) | OOV: 0/24 | 【本文】: This is a fun little app for my phone! I play it when I am waiting around!!!!! I would recommend it to a friend!
+【正解】: 4 | 【予測】: 4 (3.8542156) | OOV: 0/24 | 【本文】: This is a fun little app for my phone! I play it when I am waiting around!!!!! I would recommend it to a friend!
+【正解】: 4 | 【予測】: 4 (3.7194462) | OOV: 0/22 | 【本文】: Reminds me of the original game I played as a kid. The computer plays to win which makes it a little challenging.
+【正解】: 4 | 【予測】: 4 (3.6977303) | OOV: 0/6 | 【本文】: Very similar to desk top version.
+【正解】: 4 | 【予測】: 4 (3.7976885) | OOV: 0/4 | 【本文】: I like the variety
+【正解】: 4 | 【予測】: 4 (4.1470356) | OOV: 0/7 | 【本文】: Still a great, and fun, educational game.
+【正解】: 4 | 【予測】: 4 (3.5536473) | OOV: 0/5 | 【本文】: does the job, per son
+【正解】: 4 | 【予測】: 4 (4.009682) | OOV: 0/8 | 【本文】: Its a little complicated at first, but like!!!
+【正解】: 4 | 【予測】: 4 (3.9735482) | OOV: 0/13 | 【本文】: interesting, I do not expect to love everything. Cool is good enough sometimes.
+【正解】: 4 | 【予測】: 4 (3.7524066) | OOV: 0/15 | 【本文】: So far so good. Love being able to switch from map view to list view.
+【正解】: 4 | 【予測】: 4 (4.1458073) | OOV: 0/10 | 【本文】: this is GREAT if youre looking for a drawing game
+【正解】: 4 | 【予測】: 4 (3.8915482) | OOV: 0/2 | 【本文】: A must
+【正解】: 4 | 【予測】: 4 (3.798089) | OOV: 0/12 | 【本文】: A great way to pass the time. Fun for the whole family.
+【正解】: 4 | 【予測】: 4 (3.801566) | OOV: 0/14 | 【本文】: Enjoy the ideas and opportunities to choose different styles of items of my interest
+【正解】: 4 | 【予測】: 4 (4.0505877) | OOV: 0/23 | 【本文】: Keeps you from getting bored. I played it for hours while eating for my flight and in the air. Bought the sequel too.
+【正解】: 4 | 【予測】: 4 (3.584725) | OOV: 0/5 | 【本文】: Great app for growing minds
+【正解】: 4 | 【予測】: 4 (4.138666) | OOV: 0/3 | 【本文】: Great matching game
+【正解】: 4 | 【予測】: 4 (4.1698456) | OOV: 0/3 | 【本文】: Great kids game!
+【正解】: 4 | 【予測】: 4 (3.985098) | OOV: 0/12 | 【本文】: Is this all you do? Make two Hot Dogs pretty fun though:-)
+【正解】: 4 | 【予測】: 4 (3.9315553) | OOV: 0/11 | 【本文】: It is slow when you get started but fun later on.
+【正解】: 4 | 【予測】: 4 (4.080262) | OOV: 0/13 | 【本文】: A strategy game with really cute guys! So far I am liking it.
+【正解】: 4 | 【予測】: 4 (4.096409) | OOV: 0/4 | 【本文】: My daughter loves it
+【正解】: 4 | 【予測】: 4 (4.1149955) | OOV: 0/3 | 【本文】: I like it.
+【正解】: 4 | 【予測】: 4 (3.7937014) | OOV: 0/2 | 【本文】: Works fine
+【正解】: 4 | 【予測】: 4 (3.9957786) | OOV: 0/2 | 【本文】: works great!
+【正解】: 4 | 【予測】: 4 (3.9091055) | OOV: 0/6 | 【本文】: Red Cross site is a must
+【正解】: 4 | 【予測】: 4 (3.9565995) | OOV: 0/30 | 【本文】: This app is so awesome, I love to color but my arthritis has made it impossible to do and this app has given me the ability to be creative again.
+【正解】: 4 | 【予測】: 4 (4.1394863) | OOV: 0/4 | 【本文】: Fun hidden object game
+【正解】: 4 | 【予測】: 4 (4.0551133) | OOV: 0/18 | 【本文】: Someone else in our home is using this, but they tell me it works well and installed good.
+【正解】: 4 | 【予測】: 4 (4.0551133) | OOV: 0/18 | 【本文】: Someone else in our home is using this, but they tell me it works well and installed good.
+【正解】: 4 | 【予測】: 4 (4.1744456) | OOV: 0/4 | 【本文】: I love this game
+【正解】: 4 | 【予測】: 4 (4.1744456) | OOV: 0/4 | 【本文】: I love this game
+【正解】: 4 | 【予測】: 4 (3.719812) | OOV: 0/8 | 【本文】: Like playing but not when I get stuck!
+【正解】: 4 | 【予測】: 4 (4.0447397) | OOV: 0/8 | 【本文】: Decent enough streaming channel. Interface could be better.
+【正解】: 4 | 【予測】: 4 (3.5661528) | OOV: 0/6 | 【本文】: One of the best streaming channels
+【正解】: 4 | 【予測】: 4 (3.9001355) | OOV: 0/10 | 【本文】: Very involving. Kept me focused on playing this for Hours!
+【正解】: 4 | 【予測】: 4 (4.1034884) | OOV: 0/5 | 【本文】: Great game. Really enjoyed it
+【正解】: 4 | 【予測】: 4 (3.9181645) | OOV: 0/11 | 【本文】: it is ok but not what expected, can be fun however.
+【正解】: 4 | 【予測】: 4 (3.7494826) | OOV: 0/11 | 【本文】: Good slow paced game. Just wish it went a little faster.
+【正解】: 4 | 【予測】: 4 (4.179307) | OOV: 0/14 | 【本文】: I have only played for a few minutes but it is a fun game
+【正解】: 4 | 【予測】: 4 (3.9624066) | OOV: 0/24 | 【本文】: Great game. Needs more levels. I would like a way to receive a hint every once in a while. It is very entertaining though.
+【正解】: 4 | 【予測】: 4 (3.9380631) | OOV: 0/14 | 【本文】: Knowing that this app is saving my Kindle gives me a peace of mind.
+【正解】: 4 | 【予測】: 4 (3.8249326) | OOV: 0/2 | 【本文】: Helpful information
+【正解】: 4 | 【予測】: 4 (3.573965) | OOV: 0/20 | 【本文】: Love the App! Did exactly what I wanted it to do and it really works! You will not be disappointed.
+【正解】: 4 | 【予測】: 4 (4.0482616) | OOV: 0/3 | 【本文】: Fun to play!
+【正解】: 4 | 【予測】: 4 (3.5168679) | OOV: 0/4 | 【本文】: Got what was described
+【正解】: 4 | 【予測】: 4 (3.8543434) | OOV: 0/2 | 【本文】: very helpful.
+【正解】: 4 | 【予測】: 4 (4.08603) | OOV: 0/4 | 【本文】: Just started seems fun...
+【正解】: 4 | 【予測】: 4 (3.9106386) | OOV: 0/9 | 【本文】: Great game to play and helps me with thinking
+【正解】: 4 | 【予測】: 4 (4.0239134) | OOV: 0/20 | 【本文】: So fun and good for all ages and ability levels! Definitely worth your time and money. Have fun and enjoy
+【正解】: 4 | 【予測】: 4 (3.8759112) | OOV: 0/6 | 【本文】: Entertaining eat up your coins quickly
+【正解】: 4 | 【予測】: 4 (3.8543513) | OOV: 0/2 | 【本文】: Good app
+【正解】: 4 | 【予測】: 4 (4.0734887) | OOV: 0/23 | 【本文】: Helps my baby sleep. I like how it keeps playing until my tablet runs out of battery lol. Good choice of sounds too.
+【正解】: 4 | 【予測】: 4 (3.9957786) | OOV: 0/2 | 【本文】: Works great
+【正解】: 4 | 【予測】: 4 (3.6277204) | OOV: 0/7 | 【本文】: Great game. Simple to play. Awesome graphics
+【正解】: 4 | 【予測】: 4 (3.6482573) | OOV: 0/3 | 【本文】: Easy to download.
+【正解】: 4 | 【予測】: 4 (3.9965942) | OOV: 0/22 | 【本文】: This is a fun way to pass the time. I love the graphics and the levels are challenging but not too hard.
+【正解】: 4 | 【予測】: 4 (3.8458133) | OOV: 0/2 | 【本文】: nice app
+【正解】: 4 | 【予測】: 4 (3.5143845) | OOV: 0/1 | 【本文】: okay
+【正解】: 4 | 【予測】: 4 (3.6752243) | OOV: 0/1 | 【本文】: nice
+【正解】: 4 | 【予測】: 4 (3.8458133) | OOV: 0/2 | 【本文】: nice app
+【正解】: 4 | 【予測】: 4 (3.6752243) | OOV: 0/1 | 【本文】: nice
+【正解】: 4 | 【予測】: 4 (3.5143845) | OOV: 0/1 | 【本文】: okay
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: good
+【正解】: 4 | 【予測】: 4 (3.7780375) | OOV: 0/6 | 【本文】: I wish it had more levels
+【正解】: 4 | 【予測】: 4 (4.075966) | OOV: 0/2 | 【本文】: Great fun
+【正解】: 4 | 【予測】: 4 (4.1161118) | OOV: 0/11 | 【本文】: This game is fun and can be challenging. I like it
+【正解】: 4 | 【予測】: 4 (4.114711) | OOV: 0/27 | 【本文】: Im stuck on the second level and can not figure it out, it was fun doing the first level, took me a bit but I got it
+【正解】: 4 | 【予測】: 4 (3.7907228) | OOV: 0/17 | 【本文】: I have trouble getting the puzzle to open but once it is it is okay. Pretty pictures
+【正解】: 4 | 【予測】: 4 (4.0059032) | OOV: 0/6 | 【本文】: Vivid pictures. Fun when mixed up
+【正解】: 4 | 【予測】: 4 (4.110846) | OOV: 0/55 | 【本文】: The download went fine, but I am a little disappointed in this version because it does not include some of the features I am used to having in earlier versions. But I needed this kind of capability on my new laptop and the older versions are no longer available so this will have to do.
+【正解】: 4 | 【予測】: 4 (4.0543585) | OOV: 0/6 | 【本文】: Nice game for passing the time.
+【正解】: 4 | 【予測】: 4 (4.1339755) | OOV: 0/6 | 【本文】: The update did nothing to me!
+【正解】: 4 | 【予測】: 4 (4.17428) | OOV: 0/4 | 【本文】: LOVE PLAYING THIS GAME
+【正解】: 4 | 【予測】: 4 (3.7160392) | OOV: 0/27 | 【本文】: other games get so stupid with their picture combinations that I just quit. this one is really fun. I like it better than the 4 in 1
+【正解】: 4 | 【予測】: 4 (3.979891) | OOV: 0/14 | 【本文】: You should let us be able to race each other it would be amazing
+【正解】: 4 | 【予測】: 4 (4.0415516) | OOV: 0/14 | 【本文】: Just like the console game to me. Takes a long time to get money
+【正解】: 4 | 【予測】: 4 (3.8213575) | OOV: 0/3 | 【本文】: It is funny
+【正解】: 4 | 【予測】: 4 (3.505105) | OOV: 0/20 | 【本文】: I love episode and how you get to choose your story but it takes to long to get more passes.
+【正解】: 4 | 【予測】: 4 (3.9587548) | OOV: 0/13 | 【本文】: This app seems to be pretty accurate. It helps me plan my week.
+【正解】: 4 | 【予測】: 4 (3.8164983) | OOV: 0/4 | 【本文】: Never ordered or used
+【正解】: 4 | 【予測】: 4 (3.5673332) | OOV: 0/5 | 【本文】: Scroll a lot for crafting
+【正解】: 4 | 【予測】: 4 (4.1164165) | OOV: 0/11 | 【本文】: This is a fun bingo game, I really enjoy playing it
+【正解】: 4 | 【予測】: 4 (4.1104875) | OOV: 0/22 | 【本文】: so far the game is good I understand it, it easy fun keep you on your toes, I am happy with it
+【正解】: 4 | 【予測】: 4 (4.0635805) | OOV: 0/30 | 【本文】: I have been playing this game for awhile, I have put my others game on hold this game is fun I can play this game all day if I can
+【正解】: 4 | 【予測】: 4 (3.9692247) | OOV: 0/22 | 【本文】: what a game, I enjoy the different game and the awards, you get when playing the game and the daily credits to
+【正解】: 4 | 【予測】: 4 (4.0845027) | OOV: 0/23 | 【本文】: I really like this game it is challenging and I also like the different levels it have and the points is also good
+【正解】: 4 | 【予測】: 4 (4.0294266) | OOV: 0/23 | 【本文】: I really like beach bingo it fun relax understanding it helpful u receive more bingo chips and prizes and more games to enjoy
+【正解】: 4 | 【予測】: 4 (4.164795) | OOV: 0/14 | 【本文】: Not only is it fun, but I think I have learned a few things.
+【正解】: 4 | 【予測】: 4 (3.9001837) | OOV: 0/22 | 【本文】: Great game I am having a hard time putting it down. Just love the levels and can not wait till the end.
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (3.7781155) | OOV: 0/7 | 【本文】: Its fun but it needs more levels
+【正解】: 4 | 【予測】: 4 (4.1311827) | OOV: 0/4 | 【本文】: Good enough for me
+【正解】: 4 | 【予測】: 4 (4.1596384) | OOV: 0/2 | 【本文】: Good game!
+【正解】: 4 | 【予測】: 4 (4.110924) | OOV: 0/12 | 【本文】: I like that it is not hard to learn what to do
+【正解】: 4 | 【予測】: 4 (4.085322) | OOV: 0/2 | 【本文】: Really fun!
+【正解】: 4 | 【予測】: 4 (4.0629263) | OOV: 0/23 | 【本文】: needs to offer hints after a period of time to help when stuck. other than that great thinking game. good for memory too.
+【正解】: 4 | 【予測】: 4 (4.0988064) | OOV: 0/6 | 【本文】: This game is so much fun!!
+【正解】: 4 | 【予測】: 4 (3.8722527) | OOV: 0/4 | 【本文】: Hope this really helps!
+【正解】: 4 | 【予測】: 4 (4.1258125) | OOV: 0/8 | 【本文】: Those Little hungry guys are cute. Feed them!!!
+【正解】: 4 | 【予測】: 4 (3.8652468) | OOV: 0/16 | 【本文】: This was a fun strategic game. I like puzzles and mystery and this game is both.
+【正解】: 4 | 【予測】: 4 (3.704186) | OOV: 0/7 | 【本文】: Fun for seniors to exercise the brain.
+【正解】: 4 | 【予測】: 4 (4.15602) | OOV: 0/2 | 【本文】: Great game
+【正解】: 4 | 【予測】: 4 (3.7041943) | OOV: 0/10 | 【本文】: Good game for us older folks to exercise the brain
+【正解】: 4 | 【予測】: 4 (4.1614366) | OOV: 0/2 | 【本文】: fun game
+【正解】: 4 | 【予測】: 4 (3.9805896) | OOV: 0/25 | 【本文】: Great game. Not too easy, but not too hard either. Only wish it had more info on how gain points. Great for killing time though.
+【正解】: 4 | 【予測】: 4 (4.0482616) | OOV: 0/3 | 【本文】: fun to play
+【正解】: 4 | 【予測】: 4 (3.7358248) | OOV: 0/1 | 【本文】: Great
+【正解】: 4 | 【予測】: 4 (3.7466915) | OOV: 0/32 | 【本文】: I would like to news to be even more local than it is. I like to use this app to keep up with what is happening in my area of the state.
+【正解】: 4 | 【予測】: 4 (3.9957786) | OOV: 0/2 | 【本文】: Works great
+【正解】: 4 | 【予測】: 4 (3.9392333) | OOV: 0/8 | 【本文】: normal amounts of ads, but it is free
+【正解】: 4 | 【予測】: 4 (4.137561) | OOV: 0/2 | 【本文】: Cute game.
+【正解】: 4 | 【予測】: 4 (4.0956163) | OOV: 0/7 | 【本文】: basic but what else do you need
+【正解】: 4 | 【予測】: 4 (4.058465) | OOV: 0/22 | 【本文】: Like the choice of match 3. But, the story is a bit long, I tend to click through without reading it all.
+【正解】: 4 | 【予測】: 4 (4.092972) | OOV: 0/17 | 【本文】: I like this game but needing to pay to get to the next level, not so much.
+【正解】: 4 | 【予測】: 4 (3.5589108) | OOV: 0/7 | 【本文】: Would like more time on free trial
+【正解】: 4 | 【予測】: 4 (3.855739) | OOV: 0/3 | 【本文】: Fun and fast!
+【正解】: 4 | 【予測】: 4 (3.8930302) | OOV: 0/20 | 【本文】: It takes a bit to explain the goals to kids, but it has potential for out of the box thinking,.
+【正解】: 4 | 【予測】: 4 (4.054859) | OOV: 0/6 | 【本文】: Good game to pass the time
+【正解】: 4 | 【予測】: 4 (3.6451273) | OOV: 0/7 | 【本文】: Love this game but too many ads.
+【正解】: 4 | 【予測】: 4 (3.7244794) | OOV: 0/1 | 【本文】: nothing
+【正解】: 4 | 【予測】: 4 (3.790298) | OOV: 0/17 | 【本文】: It seemed to be just what I was looking for, but my cat was only slightly interested.
+【正解】: 4 | 【予測】: 4 (4.15602) | OOV: 0/2 | 【本文】: Great game.
+【正解】: 4 | 【予測】: 4 (4.1801224) | OOV: 0/30 | 【本文】: This is a great game, but I would rather not have the special abilities you can purchase. I would rather play the game without them. Otherwise a really fun game.
+【正解】: 4 | 【予測】: 4 (4.090793) | OOV: 0/4 | 【本文】: Very challenging yet fun!
+【正解】: 4 | 【予測】: 4 (4.0843186) | OOV: 0/6 | 【本文】: Nice game. A lot of fun.
+【正解】: 4 | 【予測】: 4 (3.9871025) | OOV: 0/20 | 【本文】: VERY Enjoyable game. Quite easy to use. Ran out of tickets too soon. Did not want to invite my friends.
+【正解】: 4 | 【予測】: 4 (4.0548534) | OOV: 0/11 | 【本文】: Really cool game interesting story line. Cool to pass the time.
+【正解】: 4 | 【予測】: 4 (3.9467502) | OOV: 0/24 | 【本文】: This game is very entertaining for five minutes. Then it gets pretty old. But I still enjoy this game every once in a while.
+【正解】: 4 | 【予測】: 4 (3.812117) | OOV: 0/24 | 【本文】: I think this is a great game for all ages. It can get boring every once in a while, but it never gets old.
+【正解】: 4 | 【予測】: 4 (3.5024216) | OOV: 0/2 | 【本文】: as described
+【正解】: 4 | 【予測】: 4 (3.5024216) | OOV: 0/2 | 【本文】: as described
+【正解】: 4 | 【予測】: 4 (3.5024216) | OOV: 0/2 | 【本文】: as described
+【正解】: 4 | 【予測】: 4 (3.807597) | OOV: 0/24 | 【本文】: The only problem was when we tried to watch a football game on Christmas at a relatives house. It said game only on tv.
+【正解】: 4 | 【予測】: 4 (3.9894636) | OOV: 0/3 | 【本文】: Integrated very well
+【正解】: 4 | 【予測】: 4 (4.098873) | OOV: 0/2 | 【本文】: Love it
+【正解】: 4 | 【予測】: 4 (3.984114) | OOV: 0/2 | 【本文】: Good one!
+【正解】: 4 | 【予測】: 4 (4.1614366) | OOV: 0/2 | 【本文】: Fun game
+【正解】: 4 | 【予測】: 4 (4.035825) | OOV: 0/9 | 【本文】: I love this game kinda hard to figure out
+【正解】: 4 | 【予測】: 4 (3.7669172) | OOV: 0/47 | 【本文】: It is a pretty good app. I used to live in Central New York and was hoping for an solo that would allow me to watch live, local news. Unfortunately, this is as close as it gets. It gives highlights but I really wanted live local news.
+【正解】: 4 | 【予測】: 4 (4.1471663) | OOV: 0/2 | 【本文】: Wonderful game!
+【正解】: 4 | 【予測】: 4 (3.8866177) | OOV: 0/3 | 【本文】: need more movies
+【正解】: 4 | 【予測】: 4 (4.081808) | OOV: 0/4 | 【本文】: Love it a lot.
+【正解】: 4 | 【予測】: 4 (4.098221) | OOV: 0/4 | 【本文】: So far so good
+【正解】: 4 | 【予測】: 4 (3.5234265) | OOV: 0/22 | 【本文】: I love this game! Beautiful tones and so easy. Great game for the whole family. Wish I had found this app sooner!
+【正解】: 4 | 【予測】: 4 (3.7119858) | OOV: 0/24 | 【本文】: Very good app. Wish I would use it more as it really does aid in relaxation, which is good for my depression and anxiety.
+【正解】: 4 | 【予測】: 4 (3.9427385) | OOV: 0/5 | 【本文】: Good exercise for the mind
+【正解】: 4 | 【予測】: 4 (4.1125813) | OOV: 0/11 | 【本文】: Not that it is not good. I am just over it.
+【正解】: 4 | 【予測】: 4 (3.9392357) | OOV: 0/31 | 【本文】: Too many ads. Pleased that it had the movie we were looking for. The number of ads and how they popped up out of nowhere was annoying, but it is free.
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (4.03477) | OOV: 0/5 | 【本文】: Best way to waste time.
+【正解】: 4 | 【予測】: 4 (3.7959034) | OOV: 0/20 | 【本文】: This game is Easy, fun and entertaining. I like that you can play real people as well as the computer.
+【正解】: 4 | 【予測】: 4 (4.0429134) | OOV: 0/5 | 【本文】: Easy to learn and play!
+【正解】: 4 | 【予測】: 4 (4.0255637) | OOV: 0/6 | 【本文】: Simple and easy to change up.
+【正解】: 4 | 【予測】: 4 (4.0401654) | OOV: 0/5 | 【本文】: Great way to pass time.
+【正解】: 4 | 【予測】: 4 (3.7047791) | OOV: 0/9 | 【本文】: easy to use. I like the additional percent button!
+【正解】: 4 | 【予測】: 4 (3.8074977) | OOV: 0/6 | 【本文】: easy to install and worked fine
+【正解】: 4 | 【予測】: 4 (4.0826044) | OOV: 0/3 | 【本文】: Lots of fun
+【正解】: 4 | 【予測】: 4 (4.174313) | OOV: 0/4 | 【本文】: I like this game
+【正解】: 4 | 【予測】: 4 (3.790283) | OOV: 0/11 | 【本文】: It is good the words are not all items in picture.
+【正解】: 4 | 【予測】: 4 (3.9465165) | OOV: 0/6 | 【本文】: Great fun. Had to cheat though.
+【正解】: 4 | 【予測】: 4 (3.9181044) | OOV: 0/2 | 【本文】: Very interesting
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (3.677576) | OOV: 0/23 | 【本文】: brush up on driving skills. Have you been on the road lately? This game is fun, exciting, challenging and I like it alot
+【正解】: 4 | 【予測】: 4 (3.7024171) | OOV: 0/6 | 【本文】: fun for both children and adults
+【正解】: 4 | 【予測】: 4 (3.5343776) | OOV: 0/2 | 【本文】: Very informative.
+【正解】: 4 | 【予測】: 4 (3.8479724) | OOV: 0/3 | 【本文】: Fun weather app.
+【正解】: 4 | 【予測】: 4 (4.011123) | OOV: 0/25 | 【本文】: love that i can play music to wake up to. Seems to crash often when i start it up. hopefully an update will fix that.
+【正解】: 4 | 【予測】: 4 (3.8328333) | OOV: 0/22 | 【本文】: Awesome free books and audio books, just put in your library card. My child and I both use it. Tons of books!
+【正解】: 4 | 【予測】: 4 (4.163268) | OOV: 0/15 | 【本文】: If would be better if the slots were paying out better. Still a decent game.
+【正解】: 4 | 【予測】: 4 (3.9885778) | OOV: 0/12 | 【本文】: Love the games. Just would like the winning to happen more often.
+【正解】: 4 | 【予測】: 4 (4.054858) | OOV: 0/9 | 【本文】: It is a fun way to pass the time.
+【正解】: 4 | 【予測】: 4 (3.62761) | OOV: 0/6 | 【本文】: It experiences failure every day lately
+【正解】: 4 | 【予測】: 4 (3.7291539) | OOV: 0/8 | 【本文】: Great app, but the adds can get annoying
+【正解】: 4 | 【予測】: 4 (4.0464) | OOV: 0/5 | 【本文】: great app for working out
+【正解】: 4 | 【予測】: 4 (3.8458133) | OOV: 0/2 | 【本文】: Nice app
+【正解】: 4 | 【予測】: 4 (4.173215) | OOV: 0/8 | 【本文】: My son has autism and loves this game
+【正解】: 4 | 【予測】: 4 (4.097351) | OOV: 0/7 | 【本文】: My son has autism and loves it
+【正解】: 4 | 【予測】: 4 (4.097947) | OOV: 0/8 | 【本文】: My son has autism and he loves it
+【正解】: 4 | 【予測】: 4 (4.0880947) | OOV: 0/10 | 【本文】: My son has autism and he likes this very much
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/7 | 【本文】: I use apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/9 | 【本文】: I use all the apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (3.5066736) | OOV: 0/9 | 【本文】: I use all the apps on my Fire tablet!
+【正解】: 4 | 【予測】: 4 (4.036622) | OOV: 0/25 | 【本文】: I really like this game you have to think about your moves and what part of the book or story that will help you most.
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (3.644198) | OOV: 0/3 | 【本文】: Good fun relaxing
+【正解】: 4 | 【予測】: 4 (3.8768153) | OOV: 0/6 | 【本文】: Good game been playing for years
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (3.6884365) | OOV: 0/15 | 【本文】: Good news app for mix of local, national and international news as well as entertainment.
+【正解】: 4 | 【予測】: 4 (3.6122382) | OOV: 0/14 | 【本文】: Closest thing to the familiar Google site on Fire. Easy to search and navigate.
+【正解】: 4 | 【予測】: 4 (3.8695636) | OOV: 0/38 | 【本文】: This is a good app. The only bad thing is if you accidentally tap on one song once, it keep bringing music from that genre in your recommended for months. But over all is a really great app.
+【正解】: 4 | 【予測】: 4 (4.088584) | OOV: 0/17 | 【本文】: I play this game on iPad and on some of my laptops and enjoy it very much
+【正解】: 4 | 【予測】: 4 (4.020213) | OOV: 0/28 | 【本文】: The app works great except for the 7th generation fire it take a while to load and sometimes closes out the app while loading but overall its great
+【正解】: 4 | 【予測】: 4 (3.702367) | OOV: 0/4 | 【本文】: Just like the title.
+【正解】: 4 | 【予測】: 4 (3.6143043) | OOV: 0/10 | 【本文】: this game might have some bugs but they get fixed
+【正解】: 4 | 【予測】: 4 (3.8841548) | OOV: 0/5 | 【本文】: This is good I guess
+【正解】: 4 | 【予測】: 4 (3.7353673) | OOV: 0/7 | 【本文】: This game is very fun and entertaining.
+【正解】: 4 | 【予測】: 4 (4.0393386) | OOV: 0/17 | 【本文】: It had interesting stuff in it and I liked the posts that my friends put on there.
+【正解】: 4 | 【予測】: 4 (3.9508471) | OOV: 0/22 | 【本文】: I just started watching it so I rated it four stars for right now. It seems to be pretty good so far.
+【正解】: 4 | 【予測】: 4 (4.0806417) | OOV: 0/7 | 【本文】: Hard fields, but not impossible. Overall, fun.
+【正解】: 4 | 【予測】: 4 (3.555627) | OOV: 0/4 | 【本文】: Pretty fun good puzzles
+【正解】: 4 | 【予測】: 4 (4.0970783) | OOV: 0/8 | 【本文】: As its name implies, its simple, but fun.
+【正解】: 4 | 【予測】: 4 (3.9247005) | OOV: 0/16 | 【本文】: Not bad, not great, but definitely not bad. Its a fun little toy to play with.
+【正解】: 4 | 【予測】: 4 (3.9538598) | OOV: 0/11 | 【本文】: This is one of my favorite music apps that I use!
+【正解】: 4 | 【予測】: 4 (3.7188568) | OOV: 0/9 | 【本文】: Is good for music but the ads are annoying
+【正解】: 4 | 【予測】: 4 (3.9008906) | OOV: 0/6 | 【本文】: Perfect for my musical discovery needs.!
+【正解】: 4 | 【予測】: 4 (3.9296393) | OOV: 0/5 | 【本文】: Wish earning gems were easier
+【正解】: 4 | 【予測】: 4 (3.9431658) | OOV: 0/4 | 【本文】: Not bad for free
+【正解】: 4 | 【予測】: 4 (3.5143845) | OOV: 0/1 | 【本文】: Okay
+【正解】: 4 | 【予測】: 4 (4.174377) | OOV: 0/6 | 【本文】: I really enjoy playing this game.
+【正解】: 4 | 【予測】: 4 (3.8687303) | OOV: 0/5 | 【本文】: This is a great app!
+【正解】: 4 | 【予測】: 4 (4.1614366) | OOV: 0/2 | 【本文】: Fun game
+【正解】: 4 | 【予測】: 4 (4.1310334) | OOV: 0/9 | 【本文】: Not bad, but a little too easy for me.
+【正解】: 4 | 【予測】: 4 (3.8930302) | OOV: 0/20 | 【本文】: Fun game. Great value. I play it with my kids so they learn dimensions and out of the box thinking.
+【正解】: 4 | 【予測】: 4 (3.869043) | OOV: 0/5 | 【本文】: A diverse collection of music.
+【正解】: 4 | 【予測】: 4 (3.9061966) | OOV: 0/19 | 【本文】: I know that ads are necessary to keep the app free, but a few less ads would be cool.
+【正解】: 4 | 【予測】: 4 (3.8621335) | OOV: 0/13 | 【本文】: pretty great music streaming service in my experience (which is like 3 months)
+【正解】: 4 | 【予測】: 4 (3.8154142) | OOV: 0/37 | 【本文】: This game is super fun! But it has nothing to with a woman and a baby freezing in winter, like shown in the ads. But overall, it has a nice storyline and the game keeps you interested.
+【正解】: 4 | 【予測】: 4 (3.5850797) | OOV: 0/10 | 【本文】: Its so much fun and funny the guys go flying
+【正解】: 4 | 【予測】: 4 (4.124275) | OOV: 0/6 | 【本文】: A game that you play games
+【正解】: 4 | 【予測】: 4 (3.8108807) | OOV: 0/25 | 【本文】: Its fun. Cute dragons. If you want any chance to get anything great in the events you better be ready to shell out the cash.
+【正解】: 4 | 【予測】: 4 (3.6705503) | OOV: 0/8 | 【本文】: Good Game except it takes forever to load
+【正解】: 4 | 【予測】: 4 (3.5463352) | OOV: 0/31 | 【本文】: Good Game except you need to make it possible to buy clubs with silver coins instead of good coins or make it possible to trade in silver coins for good coins
+【正解】: 4 | 【予測】: 4 (3.777986) | OOV: 0/8 | 【本文】: Fun but not that challenging needs more levels.
+【正解】: 4 | 【予測】: 4 (3.7196674) | OOV: 0/2 | 【本文】: decent selection.
+【正解】: 4 | 【予測】: 4 (4.004074) | OOV: 0/8 | 【本文】: You need Internet and mine is very bad
+【正解】: 4 | 【予測】: 4 (4.1308393) | OOV: 0/6 | 【本文】: Um its kinda bad for me
+【正解】: 4 | 【予測】: 4 (3.6525695) | OOV: 0/6 | 【本文】: Good but keeps asking for address
+【正解】: 4 | 【予測】: 4 (3.6223588) | OOV: 0/2 | 【本文】: Very relaxing
+【正解】: 4 | 【予測】: 4 (4.094208) | OOV: 0/4 | 【本文】: Great app very fun
+【正解】: 4 | 【予測】: 4 (3.8694103) | OOV: 0/5 | 【本文】: My kids enjoy this app
+【正解】: 4 | 【予測】: 4 (3.850713) | OOV: 0/2 | 【本文】: Great app
+【正解】: 4 | 【予測】: 4 (3.850713) | OOV: 0/2 | 【本文】: Great app
+【正解】: 4 | 【予測】: 4 (3.8561802) | OOV: 0/2 | 【本文】: Fun app
+【正解】: 4 | 【予測】: 4 (3.8691313) | OOV: 0/5 | 【本文】: My daughters love this app
+【正解】: 4 | 【予測】: 4 (3.8691313) | OOV: 0/5 | 【本文】: My daughters love this app
+【正解】: 4 | 【予測】: 4 (3.8561802) | OOV: 0/2 | 【本文】: Fun app
+【正解】: 4 | 【予測】: 4 (3.8412418) | OOV: 0/2 | 【本文】: Awesome app
+【正解】: 4 | 【予測】: 4 (3.8992758) | OOV: 0/7 | 【本文】: This game keeps you busy for hours!
+【正解】: 4 | 【予測】: 4 (4.173857) | OOV: 0/12 | 【本文】: Not bad but some differences are quite subtle. Overall a great game.
+【正解】: 4 | 【予測】: 4 (4.1738806) | OOV: 0/18 | 【本文】: I like the game itself, but some of the boards are repetitive. It is otherwise a great game.
+【正解】: 4 | 【予測】: 4 (3.794976) | OOV: 0/17 | 【本文】: Its fun for kids and sometimes it can make it seem boring bc of all the waiting
+【正解】: 4 | 【予測】: 4 (3.6793385) | OOV: 0/16 | 【本文】: Its a pretty standard match three game. Its just a fun twist with the western theme.
+【正解】: 4 | 【予測】: 4 (3.8041782) | OOV: 0/20 | 【本文】: I really have enjoyed playing this game so far. There are plenty of levels and mission after mission to complete.
+【正解】: 4 | 【予測】: 4 (3.9247837) | OOV: 0/15 | 【本文】: Just started playing but it seems to be an interesting game that keeps you thinking.
+【正解】: 4 | 【予測】: 4 (3.9894826) | OOV: 0/19 | 【本文】: Wish there were more ways to earn more moves on the upper levels. It is a fun game though.
+【正解】: 4 | 【予測】: 4 (3.711149) | OOV: 0/3 | 【本文】: Fun and challenging!
+【正解】: 4 | 【予測】: 4 (3.8056715) | OOV: 0/8 | 【本文】: I found this game to be quite enjoyable.
+【正解】: 4 | 【予測】: 4 (3.6476707) | OOV: 0/2 | 【本文】: Frustrating occasionally.
+【正解】: 4 | 【予測】: 4 (4.153017) | OOV: 0/9 | 【本文】: So far this is a good free word game.
+【正解】: 4 | 【予測】: 4 (3.641197) | OOV: 0/15 | 【本文】: I love spotify so much but you cant play music offline without paying for premium.
+【正解】: 4 | 【予測】: 4 (4.0197344) | OOV: 0/25 | 【本文】: My sister speaks it and I thought it would be great to learn like she did. it has puzzles using signs. how neat is that.
+【正解】: 4 | 【予測】: 4 (4.119494) | OOV: 0/6 | 【本文】: This is amazing you should get
+【正解】: 4 | 【予測】: 4 (3.890766) | OOV: 0/25 | 【本文】: The app may be slow at times and once in a while will crash, however most of the time it works fine without any problems
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (3.6381075) | OOV: 0/6 | 【本文】: Love the color of the dress
+【正解】: 4 | 【予測】: 4 (4.1339035) | OOV: 0/6 | 【本文】: It is so amazing to me
+【正解】: 4 | 【予測】: 4 (3.9438288) | OOV: 0/51 | 【本文】: Seemed to have quickly cleaned my kindle. It was advertised as a free application but it only located the problems for free. You must purchase the app in order for it to clean and optimize your device. Still for a small price, if it does as is promises..... Time will tell....
+【正解】: 4 | 【予測】: 4 (4.0796385) | OOV: 0/4 | 【本文】: It really works good
+【正解】: 4 | 【予測】: 4 (4.00471) | OOV: 0/13 | 【本文】: My sons enjoyed it so much that they read it in a day.
+【正解】: 4 | 【予測】: 4 (4.0826626) | OOV: 0/3 | 【本文】: It is good.
+【正解】: 4 | 【予測】: 4 (3.645127) | OOV: 0/6 | 【本文】: Good game but too many ads
+【正解】: 4 | 【予測】: 4 (3.7594213) | OOV: 0/13 | 【本文】: Would have been great if it does not crash on fire hd 10
+【正解】: 4 | 【予測】: 4 (3.5180504) | OOV: 0/9 | 【本文】: Fun, challenging, a different twist on a popular formula
+【正解】: 4 | 【予測】: 4 (3.8778658) | OOV: 0/3 | 【本文】: I like music
+【正解】: 4 | 【予測】: 4 (4.149619) | OOV: 0/3 | 【本文】: Fun silly game
+【正解】: 4 | 【予測】: 4 (3.9600422) | OOV: 0/2 | 【本文】: Works well
+【正解】: 4 | 【予測】: 4 (4.0951443) | OOV: 0/6 | 【本文】: The kids liked it pretty good
+【正解】: 4 | 【予測】: 4 (4.098221) | OOV: 0/4 | 【本文】: So far so good.
+【正解】: 4 | 【予測】: 4 (3.70122) | OOV: 0/9 | 【本文】: I like being able to cast to other devices.
+【正解】: 4 | 【予測】: 4 (4.15602) | OOV: 0/2 | 【本文】: Great game
+【正解】: 4 | 【予測】: 4 (4.0604777) | OOV: 0/8 | 【本文】: Pretty good but it makes you battle yourself
+【正解】: 4 | 【予測】: 4 (4.060686) | OOV: 0/8 | 【本文】: Good game. Not as easy as you think!
+【正解】: 4 | 【予測】: 4 (4.109926) | OOV: 0/9 | 【本文】: Seems to do what it is supposed to do!
+【正解】: 4 | 【予測】: 4 (3.7659142) | OOV: 0/4 | 【本文】: Works great, great price
+【正解】: 4 | 【予測】: 4 (3.5198846) | OOV: 0/13 | 【本文】: It was easy to play, but it was deleted for storage on tablet.
+【正解】: 4 | 【予測】: 4 (3.5248833) | OOV: 0/11 | 【本文】: Good fame, but it was deleted to add space to tablet.
+【正解】: 4 | 【予測】: 4 (3.636986) | OOV: 0/11 | 【本文】: My son likes this game but said it needed better graphics.
+【正解】: 4 | 【予測】: 4 (3.913154) | OOV: 0/23 | 【本文】: My sons like this game, but writing songs is somewhat difficult. Breeding is easy but it would be nice to earn gems easily.
+【正解】: 4 | 【予測】: 4 (3.7387018) | OOV: 0/4 | 【本文】: Love the music selection
+【正解】: 4 | 【予測】: 4 (3.8708045) | OOV: 0/4 | 【本文】: A lot of music
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (4.098221) | OOV: 0/4 | 【本文】: So far so good
+【正解】: 4 | 【予測】: 4 (3.8027816) | OOV: 0/1 | 【本文】: Fun
+【正解】: 4 | 【予測】: 4 (3.8012948) | OOV: 0/1 | 【本文】: Good
+【正解】: 4 | 【予測】: 4 (4.049262) | OOV: 0/11 | 【本文】: When they do special events its never long enough to play.
+【正解】: 4 | 【予測】: 4 (3.82154) | OOV: 0/10 | 【本文】: i enjoy being able to watch away from my tv.
+【正解】: 4 | 【予測】: 4 (3.8667903) | OOV: 0/19 | 【本文】: It was okay I guess I kinda liked it but I hope they add more stuff to it soon
+【正解】: 4 | 【予測】: 4 (4.0429926) | OOV: 0/16 | 【本文】: Really good app really good for gaming and other stuff just try it this app out
+【正解】: 4 | 【予測】: 4 (4.0428596) | OOV: 0/19 | 【本文】: Highly recommend this app of your into music it has many categories of music try checking this app out
+【正解】: 4 | 【予測】: 4 (3.8532748) | OOV: 0/11 | 【本文】: Fun game, just wish there were less expensive hints and helps.
+【正解】: 4 | 【予測】: 4 (3.5087144) | OOV: 0/20 | 【本文】: This is a good app but it does lag some and I wish we could watch the free programming sooner.
+【正解】: 4 | 【予測】: 4 (3.850713) | OOV: 0/2 | 【本文】: Great app!
+【正解】: 4 | 【予測】: 4 (3.8412044) | OOV: 0/2 | 【本文】: Music app
+【正解】: 4 | 【予測】: 4 (3.9840786) | OOV: 0/9 | 【本文】: Needs a light mode and a more modern look
+【正解】: 4 | 【予測】: 4 (4.0437493) | OOV: 0/4 | 【本文】: Nice that is all
+【正解】: 4 | 【予測】: 4 (4.1771326) | OOV: 0/3 | 【本文】: Really good game!
+【正解】: 4 | 【予測】: 4 (4.0792933) | OOV: 0/9 | 【本文】: Only downloaded this for certain football games, works good.
+【正解】: 4 | 【予測】: 4 (3.9986458) | OOV: 0/12 | 【本文】: Fun, fun, fun! You might need a SD card for this one!
+【正解】: 4 | 【予測】: 4 (3.747835) | OOV: 0/2 | 【本文】: Really cute
+【正解】: 4 | 【予測】: 4 (3.7997952) | OOV: 0/5 | 【本文】: Fun game, full of action
+【正解】: 4 | 【予測】: 4 (3.9063635) | OOV: 0/4 | 【本文】: So much to watch!!!
+【正解】: 4 | 【予測】: 4 (3.9469805) | OOV: 0/18 | 【本文】: I love this game and it is easy to learn and can keep you busy for a while.
+【正解】: 4 | 【予測】: 4 (3.6438818) | OOV: 0/3 | 【本文】: Too many ads
+【正解】: 4 | 【予測】: 4 (3.8832517) | OOV: 0/3 | 【本文】: very good music
+【正解】: 4 | 【予測】: 4 (3.786255) | OOV: 0/2 | 【本文】: Good product
+【正解】: 4 | 【予測】: 4 (3.925501) | OOV: 0/20 | 【本文】: Great program tons of new songs to be exposed to for the first time, totally opened up my musical mind
+【正解】: 4 | 【予測】: 4 (4.15602) | OOV: 0/2 | 【本文】: Great game!
+【正解】: 4 | 【予測】: 4 (3.8219972) | OOV: 0/4 | 【本文】: Great graphics and sound.
+【正解】: 4 | 【予測】: 4 (4.088579) | OOV: 0/7 | 【本文】: So far, I like it very much!
+【正解】: 4 | 【予測】: 4 (3.6847363) | OOV: 0/6 | 【本文】: Works as expected on any platform
+【正解】: 4 | 【予測】: 4 (3.8711615) | OOV: 0/2 | 【本文】: Good movies
+【正解】: 4 | 【予測】: 4 (4.0617285) | OOV: 0/3 | 【本文】: It s good.
